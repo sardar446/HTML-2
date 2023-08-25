@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner {
+
+            margin: 0 auto;
+        }
+
+        #btn {
+            background-color: brown;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="conteiner">
+            <h1>This is my Heading</h1>
+            <div id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, illum veritatis
+                perspiciatis mollitia nihil blanditiis harum atque quis cupiditate quibusdam necessitatibus rerum
+                voluptas eligendi, esse nesciunt maxime iste odio ab maiores nostrum odit obcaecati? Delectus ratione
+                provident cupiditate accusantium, perspiciatis laboriosam at, doloremque a, deserunt excepturi quisquam
+                adipisci fugiat quaerat ullam dolore. Sint hic eius cumque necessitatibus obcaecati, optio dolore
+                voluptatum porro nihil animi laudantium at quasi, consectetur tempora asperiores eaque. Molestiae
+                consequuntur asperiores nobis veritatis velit, ducimus eaque aspernatur quaerat, temporibus fuga sunt
+                dicta voluptates quia illo. Debitis voluptatem suscipit, voluptatibus inventore asperiores omnis atque
+                cum? Sapiente nemo corrupti maiores, ducimus ipsam in nostrum quia voluptatem architecto vel fugit
+                culpa? Architecto optio obcaecati corrupti repudiandae quisquam deserunt, sequi dignissimos dolorum
+                consequatur, iste laboriosam? Veniam natus dignissimos nihil dolorem voluptatem amet quo distinctio
+                libero. Saepe architecto aut ea. Explicabo dolorem aspernatur, quod beatae pariatur dicta nihil cumque
+                doloribus corporis, ratione omnis incidunt nisi expedita itaque, consequatur deserunt optio est sit
+                laboriosam culpa ipsa voluptatum maxime. Praesentium nisi earum, facere saepe quae voluptatum magnam
+                iusto a eveniet est non exercitationem numquam vero ea quos quaerat odio dicta temporibus consectetur
+                iure blanditiis provident? Quae harum sequi voluptatem necessitatibus facilis, est laborum nobis
+                voluptatum, accusamus debitis deserunt ullam voluptas fugiat veritatis dolore, sunt quia. Voluptas earum
+                consequuntur rem omnis molestiae veritatis cupiditate numquam, velit nostrum laboriosam itaque mollitia
+                animi ipsum nesciunt blanditiis voluptate?</div>
+        </div>
+        <button id="btn" onclick="toggleHide()">Show & Hide</button>
+    </section>
+    <script>
+        function toggleHide() {
+            let btn = document.getElementById("btn");
+            let para = document.getElementById("para");
+            if (para.style.display != "none") {
+                para.style.display = "none";
+            }
+            else {
+                para.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
