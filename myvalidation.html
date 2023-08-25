@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner {
+            width: 700px;
+            background-color: khaki;
+            margin: 0 auto;
+            font-size: 25px;
+            padding: 20px;
+        }
+
+        input {
+            width: 250px;
+            height: 30px;
+        }
+
+        p {
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="conteiner">
+            <form onsubmit="return validation()">
+                <table align="center">
+                    <tr>
+                        <td><label for="Username">Username</label></td>
+                        <td><input type="text" id="Username" placeholder="Enter your Username"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p id="Usererror"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Password">Password</label></td>
+                        <td><input type="Password" id="Password" placeholder="Enter your Password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p id="Passerror"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email">Email</label></td>
+                        <td><input type="email" id="Email" placeholder="Enter your Email"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p id="Mailerror"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Mobile">Mobile</label></td>
+                        <td><input type="tel" id="Mobile"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <p id="Mobileerror"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="login"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script>
+        let Username = document.getElementById("Username")
+        let Password = document.getElementById("Password")
+        let Usererror = document.getElementById("Usererror")
+        let Passerror = document.getElementById("Passerror")
+        let Mailerror = document.getElementById("Mailerror")
+        let Mobileerror = document.getElementById("Mobileerror")
+        //   console.log(Username);
+        // console.log(Password);
+        function validation() {
+            console.log(Username.value);
+            console.log(Password.value);
+            if (Username.value == "") 
+            {
+                console.log("Enter Username");
+                Usererror.innerHTML = "Enter Username"
+                event.preventDefault()
+            }
+            else {
+                Usererror.innerHTML = ""
+            }
+            if (Password.value == "") {
+                Passerror.innerHTML = "Enter Password"
+                event.preventDefault()
+            }
+             else if (Password.value.length < 8) {
+                Passerror.innerHTML = "Max 8 Char"
+                event.preventDefault()
+            }
+            else {
+                Passerror.innerHTML = ""
+            }
+            if (Email.value == "") {
+                Mailerror.innerHTML = "Enter Email"
+                event.preventDefault()
+            }
+            else {
+                Mailerror.innerHTML = ""
+            }
+            if (Mobile.value == "") {
+                Mobileerror.innerHTML = "Enter Mobile No."
+                event.preventDefault()
+            }
+              else if (Mobile.value.length < 10) {
+                Mobileerror.innerHTML = "Max 10 Char"
+                event.preventDefault()
+            }
+            else {
+                Mobileerror.innerHTML = ""
+            }
+          
+            // return false
+        }
+    </script>
+</body>
+
+</html>
