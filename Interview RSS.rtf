@@ -1,0 +1,129 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang9 1. Explain Variable.\par
+Ans\b0\fs22 . \fs24 In programming, a variable is a value that can change, depending on conditions or on information passed to the program. Typically, a program consists of instruction s that tell the computer what to do and data that the program uses when it is running.\par
+\b\fs28 2. What are the difference Data Type & JS ?\par
+Ans. \b0\fs24 Summing up, JavaScript has different data types, primitive and non-primitive. There are seven primitive data types, Number, String, Boolean, NULL, Undefined and Symbol and one non-primitive data type 'object'. There are differences between NULL and undefined data types though both contain the same value.\par
+\b\fs28 3. Explain hoisting. \par
+Ans. \b0\fs24 Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration. \par
+\b\fs28 4. Different between data ? mark and ?? mark.\par
+Ans.\b0\fs22  \par
+\b\i 1. Ternary Operator\par
+\b0\i0\fs24 The conditional or question mark operator, represented by a ?, is one of the most powerful features in JavaScript. The ? operator is used in conditional statements, and when paired with a :, can function as a compact alternative to if...else statements.\par
+The term ternary means composed of three items or parts. The ? operator is also called the ternary operator because, unlike other operators such as strict equal (===) or remainder (%), it's the only one that takes three operands.\par
+Starting with ?, we add a condition on the left side and a value on the right side to return when the condition is true. Then we add a colon (:) followed by a value to return if the condition is false.\par
+\b\i\fs22 Syntex\par
+\b0\i0\fs24 Condition ? (Condition to Test)\par
+True (Value if true) : False (Value if false)\par
+\b\i\fs22 2. Nullish Coalescing Operator\par
+\b0\i0\fs24 The nullish coalescing ( ?? ) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined , and otherwise returns its left-hand side operand.\par
+\b\i\fs22 Syntex\par
+\b0\i0 leftExpr ?? rightExpr\par
+\par
+\b\fs28 5. One arithmetic operater with Example.\par
+Ans. \b0\fs24 let x = a + b;\par
+\b\fs28 6. Dynemic example of boolean operater.\par
+Ans.  \b0\fs22\par
+\fs24 let geek = 1;\par
+console.log(!geek);\par
+Output: \par
+false\par
+\b\fs28 7. How many keywords of JS explain any five.\par
+Ans. \b0\fs24 1. if keyword\par
+Used to define a conditioned construct. if the statement is used to run a block of code if the condition is true.\par
+\par
+2. Eval keyword\par
+Used to evaluate a specified string. The eval use as a global function eval().\par
+\par
+3. arguments keyword\par
+Represents the list of parameters passed to the function when calling the function.\par
+\par
+4. Function keyword\par
+Used to define a function to execute a block of code.\par
+\par
+5. return keyword\par
+Used to return from the function or method with or without a value.\par
+\b\fs28 8. Difference between object & Array.\par
+Ans. \b0\fs24 Arrays are best to use when the elements are numbers. Objects are best to use when the elements' strings (text). The data inside an array is known as Elements. The data inside objects are known as Properties which consists of a key and a value.\par
+\b\fs28 9. Type of function in JS.\par
+Ans.\par
+ \b0\fs24 1. Function Expression.\par
+2. Anonymous Functions.\par
+3. Immediately Invoked Function Expression.\par
+4. Constructor Functions.\par
+5. Getter Functions.\par
+6. Hoisting.\par
+7. Arrow Functions.\par
+\b\fs28 10. What is JS  in brief?\par
+Ans. \b0\fs24 JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.\par
+\b\fs28 11. Creat dynamic object in JS.\par
+Ans. \b0\fs24 <script>\par
+      const key1 = "Haircolour";\par
+      const key2 = "Eyecolour";\par
+      const person = \{\par
+         f_name : "Rohan",\par
+         l_name :"Joshi",\par
+         [key1] : "Black",\par
+         [key2] : "Brown"\par
+      \};\par
+\b\fs28 12. Different between  scripting language and programming language.\par
+Ans. \par
+\i\fs22 1. Scripting language\par
+\b0\i0\fs24 All scripting languages are programming languages. The scripting language is basically a language where instructions are written for a run time environment. They do not require the compilation step and are rather interpreted. It brings new functions to applications and glue complex system together. A scripting language is a programming language designed for integrating and communicating with other programming languages.\par
+\b\i\fs22 2. Programming language\par
+\b0\i0\fs24 A programming language is a computer language that is used by programmers (developers) to communicate with computers. It is a set of instructions written in any specific language ( C, C++, Java, Python) to perform a specific task.\par
+A programming language is mainly used to develop desktop applications, websites, and mobile applications.\par
+\b\fs28 13. Create a example of loop.\par
+Ans.\par
+\fs22  for (let i = 1; i < 5; i++) \{\par
+  console.log(i);\par
+\}\par
+\fs28 14. What are the type error in JS.\par
+Ans. \par
+\i\fs22 1. Syntax error \b0\i0\fs24 - The error occurs when you use a predefined syntax incorrectly.\par
+In the above example, an opening bracket is missing in the code, which invokes the Syntax error constructor.\par
+\b\i\fs22 2. Reference Error \b0\i0\fs24 - In a case where a variable reference can't be found or hasn't been declared, then a Reference error occurs.\par
+\b\i\fs22 3. Type Error \b0\i0\fs24 - An error occurs when a value is used outside the scope of its data type.\par
+\b\i\fs22 4. Evaluation Error \b0\i0\fs24 - Current JavaScript engines and EcmaScript specifications do not throw this error. However, it is still available for backward compatibility. The error is called when the eval() backward function is used.\par
+\b\i\fs22 5. RangeError \b0\i0\fs24 - There is an error when a range of expected values is required.\par
+\b\i\fs22 6. URI Error \b0\i0\fs24 - When the wrong character(s) are used in a URI function, the error is called.\par
+\b\i\fs22 7. Internal Error \b0\i0\fs24 - In the JS engine, this error occurs most often when there is too much data and the stack exceeds its critical size. When there are too many recursion patterns, switch cases, etc., the JS engine gets overwhelmed.\par
+\b\fs28 15. what is lexical environment.\par
+Ans. \b0\fs24 A lexical environment is a data structure that holds identifier-variable mapping. (here identifier refers to the name of variables/functions, and the variable is the reference to actual object [including function object or primitive value]. Lexical in general means in hierarchy or in a sequence.\par
+\b\fs28 16. What is DOM explain in briefing.\par
+Ans.\b0\fs22  \fs24 In this article, we will discuss Document Object Model(DOM) along with its properties and methods used to manipulate Documents, & understand their implementation through the examples.\par
+The Document Object Model (DOM) is a programming interface for HTML(HyperText Markup Language) and XML(Extensible markup language) documents. It defines the logical structure of documents and the way a document is accessed and manipulated.\par
+\b\fs28 17. What is client side and server side.\par
+Ans.\par
+\i\fs22 SERVER-SIDE\par
+\b0\i0\fs24 Server-side refers to processes that are carried out on the web server, where the website or web application is hosted. These processes are typically executed by the server before the website or web application is delivered to the user's device, and they can include tasks such as retrieving data from a database, rendering a web page, or handling user input.\par
+\b\i\fs22 CLIENT-SIDE\par
+\b0\i0\fs24 Client-side, on the other hand, refers to processes that are carried out on the user's device, typically in the user's web browser. These processes are executed after the website or web application has been delivered to the user's device, and they can include tasks such as rendering and displaying a web page, handling user interactions, or running JavaScript code.\par
+\b\fs28 18.What is globle variable.\par
+Ans. \b0\fs24 Global variables are the types of variables that are declared outside of every function of the program. The global variable, in contrast to local variables, is accessible by all functions in a program. Global variables are not very reliable because any function in the program can alter their value.\par
+\b\fs28 19. Adding CSS using of JS.\par
+Ans.\par
+\b0\fs22 // Our CSS as text\par
+\b\fs28  \b0\fs22 var styles = `\par
+    .qwebirc-qui .ircwindow div \{ \par
+        font-family: Georgia,Cambria,"Times New Roman",Times,serif;\par
+        margin: 26px auto 0 auto;\par
+        max-width: 650px;\par
+    \}\par
+    .qwebirc-qui .lines \{\par
+        font-size: 18px;\par
+        line-height: 1.58;\par
+        letter-spacing: -.004em;\par
+    \}\par
+    .qwebirc-qui .nicklist a \{\par
+        margin: 6px;\par
+    \}\par
+`\par
+var styleSheet = document.createElement("style")\par
+styleSheet.innerText = styles\b\par
+\b0\par
+\par
+\b\fs28\par
+\b0\fs22\par
+}
+ 
