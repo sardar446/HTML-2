@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner {
+    background-color: rgb(0, 162, 255);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    font-size: 20px;
+    width: 50px;
+    margin: 8px 8px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row input {
+    font-size: 16px;
+    padding: 10px 25px;
+    margin: 10px auto;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="conteiner">
+            <h1>Welcome To My Calculater</h1>
+            <div class="row">
+                <input type="text">
+            </div>
+            <div class="row">
+                <button class="btn">AC</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button class="btn">/</button>
+            </div>
+            <div class="row">
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">*</button>
+            </div>
+            <div class="row">
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">-</button>
+            </div>
+            <div class="row">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">+</button>
+            </div>
+            <div class="row">
+                <button class="btn">+/-</button>
+                <button class="btn">0</button>
+                <button class="btn">.</button>
+                <button class="btn">=</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        let string = ""
+let buttons = document.querySelectorAll(".btn");
+Array.from(buttons).forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        if (e.target.innerHTML == "=") {
+            string = eval(string);
+            document.querySelector("input").value = string;
+        }
+        else if(e.target.innerHTML == "AC"){
+            string = ""
+            document.querySelector("input").value = string;
+        }
+        else {
+            console.log(e.target);
+            string = string + e.target.innerHTML;
+            document.querySelector("input").value = string;
+        }
+    })
+})
+    </script>
+</body>
+
+</html>
