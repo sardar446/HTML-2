@@ -1,0 +1,1486 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\i\f0\fs44\lang9 React - Styling & Advance React\par
+
+\pard\sa200\sl276\slmult1\i0\fs28 1. \f1 Create Shopping site home page with Styled- component\f0\lang16393 .\par
+Ans.\b0\fs24\par
+\b\i 1. Index.js Page\par
+\b0\i0 import React from 'react';\par
+import ReactDOM from 'react-dom/client';\par
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';\par
+import "@fortawesome/fontawesome-free/css/all.min.css";\par
+// import './index.css';\par
+// import App from './App';\par
+import reportWebVitals from './reportWebVitals';\par
+import \{ RouterProvider \} from 'react-router-dom';\par
+import Mainrouter from './Mainrouter' ;\par
+// import \{ BrowserRouter \} from 'react-router-dom';\par
+\par
+const root = ReactDOM.createRoot(document.getElementById('root'));\par
+root.render(\par
+  <RouterProvider router=\{Mainrouter\} />\par
+);\par
+\par
+// If you want to start measuring performance in your app, pass a function\par
+// to log results (for example: reportWebVitals(console.log))\par
+// or send to an analytics endpoint. Learn more: {{\field{\*\fldinst{HYPERLINK https://bit.ly/CRA-vitals }}{\fldrslt{https://bit.ly/CRA-vitals\ul0\cf0}}}}\f0\fs24\par
+reportWebVitals();\par
+\par
+\b\i 2. Mainrouter.jsx Page\par
+\b0\i0\lang9 import React, \{ Suspense, lazy \} from 'react';\par
+import \{ createBrowserRouter \} from 'react-router-dom';\par
+import Navbar from './Navbar';\par
+import Home from './Home';\par
+import About from './About';\par
+import Contact from './Contact';\par
+import Product from './Product';\par
+import Example from './Example';\par
+const Classoroutes = lazy(()=>import("./Classcompo/Classroutes"))\par
+const Functionroutes = lazy(()=>import("./Functioncompo/Functionroutes"))\par
+const Mainroter = createBrowserRouter([ \par
+    \{\par
+        path : "/",\par
+        element : <><Navbar/><Home/></>\par
+    \},\par
+    \{\par
+        path : "/about",\par
+        element : <><Navbar/>\par
+        \{/* <Suspense fallback=\{<h1>Loading...</h1>\}> */\}\par
+        <About/>\par
+        \{/* </Suspense> */\}\par
+        </>\par
+    \},\par
+    \{\par
+        path : "/contact",\par
+        element : <><Navbar/><Contact/></>\par
+    \},\par
+    \{\par
+        path : "/product",\par
+        element : <><Navbar/><Product/></>\par
+    \},\par
+    \{\par
+        path : "/example",\par
+        element : <><Navbar/><Example/></>,\par
+        children : [\par
+           \{\par
+            path : "Classcompo/*",\par
+            element : <Suspense fallback=\{<h1>Loading...</h1>\}><Classoroutes/></Suspense>\par
+           \},\par
+           \{\par
+            path : "Functioncompo/*",\par
+            element : <Suspense fallback=\{<h1>Loading...</h1>\}><Functionroutes/></Suspense>\par
+           \}\par
+        \par
+        ]\par
+        \par
+    \}\par
+])\par
+\par
+export default Mainroter;\par
+\par
+\b\i 3. Navbar.jsx Page\par
+\b0\i0 import React, \{ useState \} from 'react';\par
+import \{\par
+  MDBContainer,\par
+  MDBNavbar,\par
+  MDBNavbarBrand,\par
+  MDBNavbarToggler,\par
+  MDBIcon,\par
+  MDBNavbarNav,\par
+  MDBNavbarItem,\par
+  MDBNavbarLink,\par
+  MDBBtn,\par
+  MDBDropdown,\par
+  MDBDropdownToggle,\par
+  MDBDropdownMenu,\par
+  MDBDropdownItem,\par
+  MDBCollapse,\par
+\} from 'mdb-react-ui-kit';\par
+import \{ Link,Outlet \} from 'react-router-dom';\par
+import './Navbar.css'\par
+export default function Navbar() \{\par
+  const [showBasic, setShowBasic] = useState(false);\par
+\par
+  return (\par
+    <MDBNavbar expand='lg' light bgColor='light'>\par
+      <MDBContainer fluid>\par
+        <MDBNavbarBrand href='#'>Brand</MDBNavbarBrand>\par
+\par
+        <MDBNavbarToggler\par
+          aria-controls='navbarSupportedContent'\par
+          aria-expanded='false'\par
+          aria-label='Toggle navigation'\par
+          onClick=\{() => setShowBasic(!showBasic)\}\par
+        >\par
+          <MDBIcon icon='bars' fas />\par
+        </MDBNavbarToggler>\par
+\par
+        <MDBCollapse navbar show=\{showBasic\}>\par
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink active aria-current='page' >\par
+              <Link className='nav-links' to='/'>Home</Link>\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink active aria-current='page' >\par
+                <Link to='/about'>About</Link>\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink active aria-current='page' >\par
+                <Link to='/contact'>Contact</Link>\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink active aria-current='page' >\par
+                <Link to='/product'>Product</Link>\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink active aria-current='page' >\par
+                <Link to='/example'>Example</Link>\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink href='#'>Link</MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+            <MDBNavbarItem>\par
+              <MDBDropdown>\par
+                <MDBDropdownToggle tag='a' className='nav-link' role='button'>\par
+                  Dropdown\par
+                </MDBDropdownToggle>\par
+                <MDBDropdownMenu>\par
+                  <MDBDropdownItem link>Action</MDBDropdownItem>\par
+                  <MDBDropdownItem link>Another action</MDBDropdownItem>\par
+                  <MDBDropdownItem link>Something else here</MDBDropdownItem>\par
+                </MDBDropdownMenu>\par
+              </MDBDropdown>\par
+            </MDBNavbarItem>\par
+\par
+            <MDBNavbarItem>\par
+              <MDBNavbarLink disabled href='#' tabIndex=\{-1\} aria-disabled='true'>\par
+                Disabled\par
+              </MDBNavbarLink>\par
+            </MDBNavbarItem>\par
+          </MDBNavbarNav>\par
+\par
+          <form className='d-flex input-group w-auto'>\par
+            <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />\par
+            <MDBBtn color='primary'>Search</MDBBtn>\par
+          </form>\par
+        </MDBCollapse>\par
+      </MDBContainer>\par
+    </MDBNavbar>\par
+  );\par
+\}\par
+\par
+\b\i 4. Navbar.jsx Page\par
+\b0\i0 .nav-links\{\par
+    color: rgb(243, 2, 250);\par
+\}\par
+\b\i\par
+5. Home.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Outlet, Link \} from 'react-router-dom';\par
+import Navbar from './Navbar';\par
+import Mainrouter from './Mainrouter' ;\par
+function Home() \{\par
+    return (\par
+        <>\par
+         \par
+            \{/* <Navbar/> */\}\par
+            \{/* <h1>Home page</h1>\par
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, incidunt possimus, voluptates est aspernatur dicta odit architecto enim, quas excepturi dolor?</p> */\}\par
+            <Outlet></Outlet>\par
+        </>\par
+    )\par
+\}\par
+\par
+export default Home;\par
+\par
+\b\i 6. About.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Link \} from 'react-router-dom';\par
+import Navbar from './Navbar';\par
+import Mainrouter from './Mainrouter' ;\par
+function About() \{\par
+    return (\par
+        <>\par
+           \par
+            \{/* <Navbar/> */\}\par
+            <h1>About page</h1>\par
+            \{/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat velit magni amet, vel doloribus sint? Minima facilis reiciendis ratione atque aut cupiditate, nemo impedit, quos odit corrupti nihil! Nisi, nemo quasi. Deleniti quos laudantium consequatur iste. Saepe repudiandae omnis quam nihil. Excepturi obcaecati nam eligendi culpa cupiditate possimus repellendus ipsam doloremque vitae accusantium. Provident, voluptate voluptatem?</p> */\}\par
+\par
+        </>\par
+    )\par
+\}\par
+\par
+export default About\par
+\par
+\b\i 7. Contact.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Link \} from 'react-router-dom';\par
+import Navbar from './Navbar';\par
+import Mainrouter from './Mainrouter' ;\par
+function Contact() \{\par
+    return (\par
+        <>\par
+           \par
+            \{/* <Navbar/> */\}\par
+            <h1>Contact page</h1>\par
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum officia voluptatem exercitationem cupiditate eos quis eum cum magnam inventore molestiae, provident quos delectus porro et, ad nesciunt, consequatur architecto saepe dicta non. Totam aut consequuntur asperiores rem dignissimos harum alias ab, veniam voluptatem iure maiores, nesciunt minus necessitatibus facere excepturi.</p>\par
+\par
+        </>\par
+    )\par
+\}\par
+\par
+export default Contact;\par
+\b\i\par
+8. Product.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Link \} from 'react-router-dom';\par
+import Navbar from './Navbar'; \par
+import Mainrouter from './Mainrouter' ;\par
+function Product()\{\par
+    return(\par
+        <>\par
+        \{/* <Navbar/> */\}\par
+        <h1>Product page</h1>\par
+        \par
+        </>\par
+    )\par
+\}\par
+export default Product;\par
+\par
+\b\i 9. Example.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Link, Outlet \} from 'react-router-dom';\par
+import Navbar from './Navbar';\par
+const Example = () => \{\par
+    return (\par
+        <>\par
+\par
+            <div className="container mt-3">\par
+                <div className="row">\par
+                    <div className="col-6">\par
+                        <h3>\par
+                            <Link to="/example/Classcompo">Class Component</Link></h3>\par
+                    </div>\par
+                    <div className="col-6">\par
+                        <h3><Link to="Functioncompo">Functional Component</Link></h3>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+            <div className="row my-3">\par
+                <div className="col-md-12">\par
+                    <Outlet></Outlet>\par
+                </div>\par
+            </div>\par
+\par
+        </>\par
+    )\par
+\}\par
+export default Example;\par
+\par
+\b\i 10. Classroutes.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Routes, Route \} from 'react-router-dom';\par
+import \{ Component \} from 'react';\par
+import Classmenu from './Classmenu';\par
+import Classcompointro from './Classcompointro';\par
+import Classcompoprops from './Classcompoprops';\par
+import Classcompostate from './Classcompostate';\par
+import Uncontrolledcomponent from './Uncontrolledcomponent';\par
+import Controlledcomponent from './Controlledcomponent';\par
+import ConditionalRendering from './ConditionalRendering';\par
+import Listandkeys from './Listandkeys';\par
+import Classcompositionandinharitance from './Classcomsitionandinharitance';\par
+import Maincounter from './HOC/Maincounter';\par
+import Card from './Card';\par
+function Classoroutes() \{\par
+    return (\par
+        <>\par
+            <Routes>\par
+                <Route path='/' element=\{<Classmenu />\} >\par
+                    <Route path='/classcompointro' element=\{<Classcompointro />\} />\par
+                    <Route path='/Classcompoprops' element=\{<Classcompoprops />\} />\par
+                    <Route path='/Card' element=\{<Card />\} />\par
+                    <Route path='/Classcompostate' element=\{<Classcompostate />\} />\par
+                    <Route path='/Uncontrolledcomponent' element=\{<Uncontrolledcomponent />\} />\par
+                    <Route path='/Controlledcomponent' element=\{<Controlledcomponent />\} />\par
+                    <Route path='/ConditionalRendering' element=\{<ConditionalRendering />\} />\par
+                    <Route path='/Listandkeys' element=\{<Listandkeys />\} />\par
+                    <Route path='/Classcompositionandinharitance' element=\{<Classcompositionandinharitance />\} />\par
+                    <Route path='/Maincounter' element=\{<Maincounter />\} />\par
+                </Route>\par
+            </Routes>\par
+        </>\par
+    )\par
+\}\par
+\par
+export default Classoroutes;\par
+\par
+\b\i 11. Classmenu.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Classoroutes from './Classroutes';\par
+import Classcompointro from './Classcompointro';\par
+import Classcompoprops from './Classcompoprops';\par
+import \{ Link, Outlet \} from 'react-router-dom';\par
+import Card from './Card';\par
+\par
+class Classmenu extends Component \{\par
+\par
+    render() \{\par
+        return (\par
+            <>\par
+                <ul>\par
+                    <li><Link to="Classcompointro">Classcompointro</Link></li>\par
+                    <li><Link to="Classcompoprops">Classcompoprops</Link></li>\par
+                    <li><Link to="Card">Card</Link></li>\par
+                    <li><Link to="Classcompostate">Classcompostate</Link></li>\par
+                    <li><Link to="Uncontrolledcomponent">Uncontrolledcomponent</Link></li>\par
+                    <li><Link to="Controlledcomponent">Controlledcomponent</Link></li>\par
+                    <li><Link to="ConditionalRendering">ConditionalRendering</Link></li>\par
+                    <li><Link to="Listandkeys">Listandkeys</Link></li>\par
+                    <li><Link to="Classcompositionandinharitance">Classcompositionandinharitance</Link></li>\par
+                    <li><Link to="Maincounter">Maincounter</Link></li>\par
+                </ul>\par
+                <Outlet></Outlet>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classmenu;\par
+\par
+\b\i 12. Classcompointro.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Classcompoprops from './Classcompoprops';\par
+import Card from './Card';\par
+class Classcompointro extends Component \{\par
+    render() \{\par
+        let rss = "sardar"\par
+        let user = \{\par
+            name : "Sandeep",\par
+            age : 23\par
+        \}\par
+        return (\par
+            <>\par
+\par
+                <h1>Class intro</h1>\par
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iste pariatur cupiditate nam architecto quaerat rerum odio. Pariatur facilis praesentium perspiciatis aut tenetur, provident, repudiandae quis porro architecto maxime nostrum consequatur, fugiat quod in!</p>\par
+                <Classcompoprops data=\{rss\} name="Niketan" />\par
+                \{/* <h2>Hiii \{this.props.name\}</h2> */\}\par
+                <Card user = \{user\} />\par
+                <h2>\{this.props.jss\}</h2>\par
+\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classcompointro;\par
+\par
+\b\i 13. Classcompoprops.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Classcompointro from './Classcompointro';\par
+class Classcompoprops extends Component \{\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Class props</h1>\par
+                \{/* <Classcompointro name ="siraj" /> */\}\par
+                <h2>Hello \{this.props.name\}</h2>\par
+                <h2>Hello \{this.props.data\}</h2>\par
+                \par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classcompoprops;\par
+\par
+\b\i 14. Maincard.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Card from './Card';\par
+import \{\par
+  MDBCard,\par
+  MDBCardBody,\par
+  MDBCardTitle,\par
+  MDBCardText,\par
+  MDBCardImage,\par
+  MDBBtn\par
+\} from 'mdb-react-ui-kit';\par
+\par
+class Maicard extends Component \{\par
+  render() \{\par
+    return (\par
+      <MDBCard>\par
+        <MDBCardImage src=\{this.props.imgsrc\} position='top' alt='...' />\par
+        <MDBCardBody>\par
+          <MDBCardTitle>Card title</MDBCardTitle>\par
+          <MDBCardText>\par
+            Some quick example text to build on the card title and make up the bulk of the card's content.\par
+          </MDBCardText>\par
+          <MDBBtn href='#'>Button</MDBBtn>\par
+        </MDBCardBody>\par
+      </MDBCard>\par
+    );\par
+\par
+  \}\par
+\}\par
+\par
+export default Maicard;\par
+\par
+\b\i 15. Card.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Maincard from './Maincard';\par
+import \{ MDBRow, MDBCol \} from 'mdb-react-ui-kit';\par
+class Card extends Component \{\par
+\par
+    render() \{\par
+        return (\par
+            <>\par
+                <MDBRow>\par
+                    <MDBCol sm='6'>\par
+                        <Maincard imgsrc="{{\field{\*\fldinst{HYPERLINK https://picsum.photos/id/237/200/300 }}{\fldrslt{https://picsum.photos/id/237/200/300\ul0\cf0}}}}\f0\fs24 " />\par
+                    </MDBCol>\par
+                    <MDBCol sm='6'>\par
+                        <Maincard imgsrc="{{\field{\*\fldinst{HYPERLINK https://picsum.photos/id/234/200/300 }}{\fldrslt{https://picsum.photos/id/234/200/300\ul0\cf0}}}}\f0\fs24 " />\par
+                    </MDBCol>\par
+                </MDBRow>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Card;\par
+\par
+\b\i 16. Classcompostate.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+class Classcompostate extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.state = \{\par
+            count: 5,\par
+            name: "Kiran"\par
+        \}\par
+    \}\par
+    increment = () => \{\par
+        this.setState(\{ count: this.state.count * 4 \})\par
+        this.setState(\{ name: this.state.name = "Shiv" \})\par
+        console.log("increment", this.state.count);\par
+        console.log(this.state.name);\par
+    \}\par
+    decrement = () => \{\par
+        this.setState(\{ count: this.state.count / 4 \})\par
+        console.log("decrement", this.state.count);\par
+\par
+    \}\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Classcompo state</h1>\par
+                <h2>\{this.state.count\}</h2>\par
+                    <h2>\{this.state.name\}</h2>\par
+                <button onClick=\{this.increment\}>+</button>\par
+                <button onClick=\{this.decrement\}>-</button>\par
+\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classcompostate;\par
+\par
+\b\i 17. Classcompositionandinharitance.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Controlledcomponent from './Controlledcomponent';\par
+class Classcompositionandinharitance extends Component \{\par
+    render() \{\par
+        let data = "Nikunj"\par
+        return (\par
+            <>\par
+                <h1>Classcomposition and inharitance</h1>\par
+                <Controlledcomponent data=\{data\}>\par
+                    <h1>this is my website</h1>\par
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eos voluptates. Consectetur, mollitia natus hic quibusdam fugiat dicta possimus quaerat cupiditate quis dolore facere ea! Necessitatibus eaque rem consequatur culpa, voluptatum minima laboriosam sapiente soluta.</p>\par
+                </Controlledcomponent>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classcompositionandinharitance;\par
+\par
+\b\i 18. ConditionalRendering.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+class ConditionalRendering extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.state = \{\par
+            islogin: true\par
+        \}\par
+    \}\par
+\par
+    render() \{\par
+        // 4th Way give a Condition.(Always return true value )\par
+        return this.state.islogin && <h1>Welcome tops</h1>\par
+        // 3rd Way give a Condition.\par
+        // return this.state.islogin ? <h1>Welcome tops</h1> : <h1>Welcome user</h1>\par
+        // 2nd Way give a Condition.\par
+        // let msg\par
+        // if (this.state.islogin) \{\par
+        //     msg =  <h1>Welcome tops</h1>\par
+        // \}\par
+        // else\{\par
+        //     msg = <h1>Welcome user</h1>\par
+        // \}\par
+        // return msg\par
+        // 1st Way give a Condition.\par
+    //    if(this.state.islogin)\{\par
+    //     return <h1>Welcome tops</h1>\par
+    //    \}\par
+    //    else\{\par
+    //     return <h1>Welcome user</h1>\par
+    //    \}\par
+    \}\par
+\}\par
+\par
+export default ConditionalRendering;\par
+\par
+\b\i 19. Uncontrolledcomponent.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import \{ createRef \} from 'react';\par
+class Uncontrolledcomponent extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.input = createRef()\par
+        this.data = createRef()\par
+\par
+    \}\par
+    submit = (event) => \{\par
+        event.preventDefault()\par
+        console.log('submit');\par
+        console.log(this.input.current.value);\par
+        console.log(this.data.current.value);\par
+    \}\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Uncontrolled component</h1>\par
+                <form onSubmit=\{(event) => this.submit(event)\}>\par
+                    <input type="text" ref=\{this.input\} />\par
+                    <input type="text" ref=\{this.data\} />\par
+                    <input type="submit" value="submit" />\par
+                    \{/* <button onClick=\{this.submit\}>submit</button> */\}\par
+                </form>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Uncontrolledcomponent;\par
+\par
+\b\i 20. Controlledcomponent.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+class Controlledcomponent extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.state = \{\par
+            name: "Rakesh"\par
+        \}\par
+    \}\par
+    submit = (event) => \{\par
+        event.preventDefault()\par
+        console.log('submit');\par
+        console.log(this.state.name);\par
+        // console.log(this.data.current.value);\par
+    \}\par
+\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Controlled component</h1>\par
+                <form onSubmit=\{(event) => this.submit(event)\}>\par
+                    <input type="text" value=\{this.state.name\} onChange=\{(e) => this.setState(\{ name: e.target.value \})\} />\par
+                    \{/* <input type="text" ref=\{this.data\} /> */\}\par
+                    <input type="submit" value="submit" />\par
+                    \{/* <button onClick=\{this.submit\}>submit</button> */\}\par
+                    <h2>\{this.props.data\}</h2>\par
+                    <div>\par
+                        \{this.props.children\}\par
+                    </div>\par
+                </form>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Controlledcomponent;\par
+\par
+\b\i 21. Listandkeys.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+class Listandkeys extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.state = \{\par
+            item: [1, 2, 3, 4, 5, 6]\par
+\par
+        \}\par
+    \}\par
+    add = () => \{\par
+        console.log("add");\par
+        this.setState(\{ item: [8, 9, 1, 2, 3, 4, 5, 6, 7] \})\par
+    \}\par
+\par
+    render() \{\par
+        // let item = [1, 2, 3, 4, 5, 6]\par
+        let items = this.state.item.map((list) => <li key=\{toString()\}> \{list\}</li >)\par
+        return (\par
+            <>\par
+                <h1>List and keys</h1>\par
+                <ul>\par
+                    \{items\}\par
+                </ul>\par
+                <button onClick=\{this.add\}>add</button>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Listandkeys;\par
+\par
+\b\i 22. Hoc.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+\par
+const Updatecomponent = Originalcomponent => \{\par
+    class Newcomponent extends Component \{\par
+        constructor() \{\par
+            super()\par
+            this.state = \{\par
+                count: 0\par
+            \}\par
+        \}\par
+        update = () => \{\par
+            console.log("update");\par
+            this.setState(\{ count: this.state.count + 1 \})\par
+            console.log(this.state.count);\par
+        \}\par
+        render() \{ \par
+            return (\par
+                <>\par
+                <Originalcomponent update=\{this.update\} count=\{this.state.count\} name="Kishor"/>\par
+                </>\par
+            );\par
+        \}\par
+    \}\par
+     \par
+    return Newcomponent;\par
+\}\par
+\par
+export default Updatecomponent;\par
+\par
+\b\i 23. Maincounter.jsx Page\b0\par
+\i0 import React from 'react';\par
+import Clickcounter from './Clickcounter';\par
+import Hovercounter from './Hovercounter';\par
+import \{ Component \} from 'react';\par
+class Maincounter extends Component \{\par
+\par
+    render() \{\par
+        return (\par
+            <>\par
+                <Clickcounter />\par
+                <Hovercounter/>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Maincounter;\par
+\par
+\b\i 24. Clickcounter.jsx Page\par
+\b0\i0 import React from 'react';\par
+import \{ Component \} from 'react';\par
+import Updatecomponent from './Hoc';\par
+class Clickcounter extends Component \{\par
+    \par
+\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Clickcounter</h1>\par
+                <h1>\{this.props.count\}</h1>\par
+                <h2>\{this.props.name\}</h2>\par
+                <button onClick=\{this.props.update\}>Update</button>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Updatecomponent(Clickcounter);\par
+\par
+\b\i 25. Hovercounter.jsx Page\b0\par
+\i0 import React from 'react';\par
+import Updatecomponent from './Hoc';\par
+import \{ Component \} from 'react';\par
+class Hovercounter extends Component \{\par
+  \par
+    render() \{\par
+        return (\par
+            <>\par
+              <h1>Clickcounter</h1>\par
+                <h1>\{this.props.count\}</h1>\par
+                <button onMouseEnter=\{this.props.update\}>Update</button>\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Updatecomponent(Hovercounter);\par
+\par
+\b\i 26. Functionroutes.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Route, Routes \} from 'react-router-dom';\par
+import Funtioncompomenu from './Functioncompomenu';\par
+import Functioncompointro from './Functioncompointro';\par
+import Functioncompoprops from './Functioncompoprops';\par
+import Uselayouteffect from './Uselayouteffect';\par
+import Usecallback from './Usecallback';\par
+import Usememo from './Usememo';\par
+import Useeffect from './Useeffect';\par
+import Usestate from './Usestate';\par
+import Useref from './Useref';\par
+import Usecontext from './Usecontext';\par
+import Usecontexthook from './Usecontexthook';\par
+import Usereducer from './Usereducer';\par
+import Usenavigate from './Usenavigate';\par
+import Apiget from './Apiget';\par
+import Apipost from './Apipost';\par
+import Crud from './CRUD';\par
+import Api from './Api';\par
+const Functionroutes = () => \{\par
+    return (\par
+        <>\par
+            <Routes>\par
+                <Route path='/' element=\{<Funtioncompomenu />\}>\par
+                    <Route path='Functioncompointro' element=\{<Functioncompointro />\} />\par
+                    <Route path='Functioncompoprops' element=\{<Functioncompoprops />\} />\par
+                    <Route path='Usestate' element=\{<Usestate />\} />\par
+                    <Route path='Useeffect' element=\{<Useeffect />\} />\par
+                    <Route path='Uselayouteffect' element=\{<Uselayouteffect />\} />\par
+                    <Route path='Usememo' element=\{<Usememo />\} />\par
+                    <Route path='Usecallback' element=\{<Usecallback />\} />\par
+                    <Route path='Useref' element=\{<Useref />\} />\par
+                    <Route path='Api' element=\{<Api />\} />\par
+                    <Route path='Usecontext' element=\{<Usecontext />\} />\par
+                    <Route path='Usecontexthook' element=\{<Usecontexthook />\} />\par
+                    <Route path='Usereducer' element=\{<Usereducer />\} />\par
+                    <Route path='Usenavigate' element=\{<Usenavigate />\} />\par
+                    <Route path='Apiget' element=\{<Apiget />\} />\par
+                    <Route path='Apipost' element=\{<Apipost />\} />\par
+                    <Route path='Crud' element=\{<Crud />\} />\par
+                </Route>\par
+            </Routes>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Functionroutes;\par
+\par
+\b\i 27. Functionmenu.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Link ,Outlet\} from 'react-router-dom';\par
+const Funtioncompomenu = () => \{\par
+    return ( \par
+        <>\par
+        <ul>\par
+            <li><Link to="Functioncompointro">Functioncompointro</Link></li>\par
+            <li><Link to="Functioncompoprops">Functioncompoprops</Link></li>\par
+            <li><Link to="Usestate">Usestate</Link></li>\par
+            <li><Link to="Useeffect">Useeffect</Link></li>\par
+            <li><Link to="Uselayouteffect">Uselayouteffect</Link></li>\par
+            <li><Link to="Usememo">Usememo</Link></li>\par
+            <li><Link to="Usecallback">Usecallback</Link></li>\par
+            <li><Link to="Useref">Useref</Link></li>\par
+            <li><Link to="Api">Api</Link></li>\par
+            <li><Link to="Usecontext">Usecontext</Link></li>\par
+            <li><Link to="Usecontexthook">Usecontexthook</Link></li>\par
+            <li><Link to="Usereducer">Usereducer</Link></li>\par
+            <li><Link to="Usenavigate">Usenavigate</Link></li>\par
+            <li><Link to="Apiget">Apiget</Link></li>\par
+            <li><Link to="Apipost">Apipost</Link></li>\par
+            <li><Link to="Crud">Crud</Link></li>\par
+        </ul>\par
+        <Outlet></Outlet>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default Funtioncompomenu;\par
+\par
+\b\i 28. Functioncompointro.jsx Page\b0\par
+\i0 import React from 'react';\par
+const Functioncompointro = (props) => \{\par
+    return (\par
+        <>\par
+            <h1>Functioncompo intro</h1>\par
+            <h2>\{props.data\}</h2>\par
+        </>\par
+    )\par
+\}\par
+\par
+export default Functioncompointro;\par
+\par
+\b\i 29. Functioncompoprops.jsx Page\b0\par
+\i0 import React from 'react';\par
+import Functioncompointro from './Functioncompointro';\par
+const Functioncompoprops = () => \{\par
+    return ( \par
+        <>\par
+        <h1>Functioncompo props</h1>\par
+        <Functioncompointro data="Chirag"/>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default Functioncompoprops;\par
+\par
+\b\i 30. Usecontext.jsx Page\b0\par
+\i0 import React, \{ createContext \} from 'react';\par
+import CompA from './CompA';\par
+\par
+const Fname = createContext()\par
+const Usecontext = () => \{\par
+    return (\par
+        <>\par
+            <h1>Usecontext</h1>\par
+            <Fname.Provider value="Vishal">\par
+                <CompA name="Nilesh" />\par
+            </Fname.Provider>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usecontext;\par
+export \{Fname\}\par
+\par
+\b\i 31. CompA.jsx Page\b0\par
+\i0 import React from 'react';\par
+import CompB from './CompB';\par
+\par
+const CompA = (props) => \{\par
+    return (\par
+        <>\par
+            <CompB />\par
+            \{props.name\}\par
+        </>\par
+    );\par
+\}\par
+\par
+export default CompA;\par
+\par
+\b\i 32. CompB.jsx Page\b0\par
+\i0 import React from 'react';\par
+import CompC from './CompC';\par
+\par
+const CompB = () => \{\par
+    return (\par
+        <>\par
+            <CompC />\par
+        </>\par
+    );\par
+\}\par
+\par
+export default CompB;\par
+\par
+\b\i 33. CompC.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ Fname \} from './Usecontext';\par
+\par
+const CompC = () => \{\par
+    return ( \par
+        <>\par
+        <h1>data</h1>\par
+            <Fname.Consumer>\par
+                \{\par
+                    (name)=> \{\par
+                        return <h1>\{name\}</h1>\par
+                    \}\par
+                \}\par
+            </Fname.Consumer>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default CompC;\par
+\b\par
+\i 34. Usecontexthook.jsx Page\b0\par
+\i0 import React, \{ createContext \} from 'react';\par
+import One from './One';\par
+\par
+const Fname = createContext()\par
+const Usecontexthook = () => \{\par
+    const user = \{\par
+        name: "Akshay",\par
+        age: 24\par
+    \}\par
+    return (\par
+        <>\par
+            <h1>Usecontexthook</h1>\par
+            <Fname.Provider value=\{user.name + user.age\}>\par
+                <One />\par
+            </Fname.Provider>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usecontexthook;\par
+export \{ Fname \}\par
+\par
+\b\i 35. One.jsx Page\b0\par
+\i0 import React from 'react';\par
+import Two from './Two';\par
+\par
+const One = () => \{\par
+    return (\par
+        <>\par
+            <Two />\par
+        </>\par
+    );\par
+\}\par
+\par
+export default One;\par
+\par
+\b\i 36. Two.jsx Page\b0\par
+\i0 import React from 'react';\par
+import Three from './Three';\par
+\par
+const Two = () => \{\par
+    return (\par
+        <>\par
+            <Three />\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Two;\par
+\par
+\b\i 37. Three.jsx Page\b0\par
+\i0 import React, \{ useContext \} from 'react';\par
+import \{ Fname \} from './Usecontexthook';\par
+\par
+const Three = () => \{\par
+    const name = useContext(Fname)\par
+    return ( \par
+        <>\par
+        <h1>data of compo</h1>\par
+        <h2>\{name\}</h2>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default Three;\par
+\par
+\b\i 38. Usecallback.jsx Page\b0\par
+\i0 import React, \{ useCallback \} from 'react';\par
+import \{ useState \} from 'react';\par
+import Childcompo from './Childcompo';\par
+\par
+const Usecallback = () => \{\par
+\par
+    const [count, setCount] = useState(5)\par
+\par
+    const [item, setItem] = useState(10)\par
+\par
+    const data = useCallback(function data() \{\par
+        return\par
+    \}, [])\par
+    return (\par
+        <>\par
+            <h1>Usecallback</h1>\par
+            <h2>\{count\}</h2>\par
+            <h2>\{item\}</h2>\par
+            \{/* <h2>\{test\}</h2> */\}\par
+            <Childcompo data=\{data\} />\par
+            <button onClick=\{() => setCount(count + 3)\}>Updatecount</button>\par
+            <button onClick=\{() => setItem(item + 5)\}>Updateitem</button>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usecallback;\par
+\par
+\b\i 39. Childcompo.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ memo \} from 'react';\par
+\par
+const Childcompo = () => \{\par
+    console.log("chilcompo");\par
+    \par
+    return ( \par
+        <>\par
+        <h1>Childcompo</h1>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default memo(Childcompo);\par
+\par
+\b\i 40. Usememo.jsx Page\b0\par
+\i0 import React, \{ useMemo, useState \} from 'react';\par
+import Usecallback from './Usecallback';\par
+const Usememo = () => \{\par
+    const [count, setCount] = useState(5)\par
+    const [item, setItem] = useState(10)\par
+    const test = useMemo (function test() \{\par
+        console.log("count test");\par
+        return count * 5\par
+    \},[count])\par
+\par
+    return (\par
+        <>\par
+            <h1>Usememo</h1>\par
+            <h2>\{count\}</h2>\par
+            <h2>\{item\}</h2>\par
+            <h2>\{test\}</h2>\par
+            <button onClick=\{() => setCount(count + 3)\}>Updatecount</button>\par
+            <button onClick=\{() => setItem(item + 5)\}>Updateitem</button>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usememo;\par
+\par
+\b\i 41. Useeffect.jsx Page\b0\par
+\i0 import React, \{ useEffect, useState \} from 'react';\par
+\par
+\par
+const Useeffect = () => \{\par
+    const [item, setItem] = useState(0)\par
+    const [count, setCount] = useState(10)\par
+\par
+\par
+    useEffect(() => \{\par
+        alert("Welcome my website")\par
+    \}, [item])\par
+    const add = () => \{\par
+        setItem(item + 1)\par
+    \}\par
+    const count1 = () => \{\par
+        setCount(count + 5)\par
+    \}\par
+    \par
+    return (\par
+        <>\par
+            <h1>Useeffect</h1>\par
+            <h2>\{item\}</h2>\par
+            <h2>\{count\}</h2>\par
+            <button onClick=\{add\}>additem</button>\par
+            <button onClick=\{count1\}>addcount</button>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Useeffect;\par
+\par
+\b\i 42. Uselayouteffect.jsx Page\b0\par
+\i0 import React, \{ useEffect, useLayoutEffect \} from 'react';\par
+const Uselayouteffect = () => \{\par
+    function test()\{\par
+        console.log("test");\par
+    \}\par
+    \par
+    useEffect(()=>\{\par
+        console.log("useeffect test");\par
+    \},[])\par
+    useEffect(()=>\{\par
+        console.log("useeffect test1");\par
+    \},[])\par
+    useLayoutEffect(()=>\{\par
+        console.log("useLayoutEffect");\par
+    \},[])\par
+    useEffect(()=>\{\par
+        console.log("useeffect test2");\par
+    \},[])\par
+    test()\par
+    return ( \par
+        <>\par
+        <h1>Uselayouteffect</h1>\par
+        </>\par
+     );\par
+\}\par
+\par
+ \par
+export default Uselayouteffect;\par
+\par
+\b\i 43. Usenavigate.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ useNavigate \} from 'react-router-dom';\par
+\par
+const Usenavigate = () => \{\par
+    const navigate = useNavigate()\par
+    const navi = () => \{\par
+        navigate('/about')\par
+    \}\par
+    return (\par
+        <>\par
+            <h1>Usenavigate</h1>\par
+            <button onClick=\{navi\}>Hello i am navigate</button>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usenavigate;\par
+\par
+\b\i 44. Usereducer.jsx Page\b0\par
+\i0 import React, \{ useReducer, useState \} from 'react';\par
+\par
+const initialstate = 1\par
+\par
+\par
+const reducer = (state, action) => \{\par
+    console.log(state, action);\par
+    switch (action.type) \{\par
+        case "increment": return state + 1;\par
+        case "decrement": return state - 1;\par
+        case "multi": return state * 5;\par
+\par
+    \}\par
+\}\par
+const Usereducer = () => \{\par
+    // const [count, setCount] = useState(0)\par
+    // const increment = () => \{\par
+    //     setCount (count + 1)\par
+    // \}\par
+    // const decrement = () => \{\par
+    //     setCount (count - 1)\par
+    // \}\par
+    const [count, dispatch] = useReducer(reducer, initialstate)\par
+    return (\par
+        <>\par
+            <h1>Usereducer</h1>\par
+            <h2>\{count\}</h2>\par
+            <button onClick=\{() => dispatch(\{ type: "increment" \})\}>increment</button>\par
+            <button onClick=\{() => dispatch(\{ type: "decrement" \})\}>decrement</button>\par
+            <button onClick=\{() => dispatch(\{ type: "multi" \})\}>Multi</button>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Usereducer;\par
+\par
+\b\i 45. Useref.jsx Page\b0\par
+\i0 import React, \{ useRef \} from 'react';\par
+\par
+\par
+const Useref = () => \{\par
+    const inputref = useRef(null)\par
+    const phonenumberref = useRef(null)\par
+\par
+\par
+    const inputdata = () =>\{\par
+        console.log("data");\par
+        console.log(inputref.current.value);\par
+        console.log(phonenumberref.current.value);\par
+        inputref.current.style.color = "red"\par
+        phonenumberref.current.style.color = "blue"\par
+\par
+    \}\par
+    return ( \par
+        <>\par
+        <h1>Useref</h1>\par
+        <input type="text" ref=\{inputref\}/>\par
+        <input type="text" ref=\{phonenumberref\}/>\par
+        <button onClick=\{inputdata\}>submit</button>\par
+        </>\par
+     );\par
+\}\par
+ \par
+export default Useref;\par
+\par
+\b\i 46. Usestate.jsx Page\b0\par
+\i0 import React from 'react';\par
+import \{ useState \} from 'react';\par
+const Usestate = () => \{\par
+    const [count, setCount] = useState(0)\par
+    const [name, setName] = useState("Kuldeep")\par
+\par
+    function Update()\{\par
+        setCount(count +1)\par
+    \}\par
+    function UpdateText()\{\par
+        setName("Navin")\par
+    \}\par
+    return (\par
+        <>\par
+            <h1>Usestate</h1>\par
+            <h2>\{count\}</h2>\par
+            <h2>\{name\}</h2>\par
+            <button onClick=\{Update\}>Updatecount</button>\par
+            <button onClick=\{UpdateText\}>UpdateName</button>\par
+\par
+\par
+        </>\par
+    )\par
+\par
+\}\par
+\par
+export default Usestate;\par
+\par
+\b\i 47. Api.jsx Page\b0\par
+\i0 import React, \{ useEffect, useState \} from 'react';\par
+\par
+\par
+const Api = () => \{\par
+    const [userdata ,setUserdata] = useState([])\par
+\par
+    useEffect(()=>\{\par
+        // First way of call API\par
+        fetch("{{\field{\*\fldinst{HYPERLINK https://jsonplaceholder.typicode.com/todos }}{\fldrslt{https://jsonplaceholder.typicode.com/todos\ul0\cf0}}}}\f0\fs24 ").then((result)=>\{\par
+            result.json().then((resp)=>\{\par
+                console.log(resp);\par
+                setUserdata(resp)\par
+            \})\par
+            // console.log(result);\par
+            console.log(userdata);\par
+        \})\par
+\par
+    \},[])\par
+\par
+    return (\par
+        <>\par
+            <h1>Api</h1>\par
+            <table width='50%' border='1'>\par
+                <tr>\par
+                    <td>userId</td>\par
+                    <td>id</td>\par
+                    <td>title</td>\par
+                    <td>completed</td>\par
+                </tr>\par
+                \{\par
+                    userdata.map((item)=>\par
+                    <tr>\par
+                        <td>\{item.userId\}</td>\par
+                        <td>\{item.id\}</td>\par
+                        <td>\{item.title\}</td>\par
+                        <td>\{item.completed\}</td>\par
+                    </tr>\par
+                    )\par
+                \}\par
+            </table>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Api;\par
+\par
+\b\i 48. Apiget.jsx Page\b0\par
+\i0 import React, \{ useState, useEffect \} from 'react';\par
+\par
+const Apiget = () => \{\par
+\par
+    const [api, apiData] = useState([])\par
+    useEffect(() => \{\par
+        // First way of call API\par
+        fetch("  {{\field{\*\fldinst{HYPERLINK http://localhost:5000/user").then((result) }}{\fldrslt{http://localhost:5000/user").then((result)\ul0\cf0}}}}\f0\fs24  => \{\par
+            result.json().then((resp) => \{\par
+                console.log(resp);\par
+                apiData(resp)\par
+            \})\par
+            // console.log(result);\par
+            console.log(api);\par
+        \})\par
+\par
+    \}, [])\par
+    return (\par
+        <>\par
+            <h1>Apiget json-server</h1>\par
+            <table width='50%' border='1'>\par
+                <tr>\par
+                    <td>id</td>\par
+                    <td>name</td>\par
+                    <td>email</td>\par
+                    <td>password</td>\par
+                </tr>\par
+            \{\par
+                api.map((item) =>\par
+                    <tr>\par
+                        <td>\{item.id\}</td>\par
+                        <td>\{item.name\}</td>\par
+                        <td>\{item.email\}</td>\par
+                        <td>\{item.password\}</td>\par
+                    </tr>\par
+                )\par
+            \}\par
+            </table>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Apiget;\par
+\par
+\b\i 49. Apipost.jsx Page\b0\par
+\i0 import React, \{ useState \} from 'react';\par
+import './Apipost.css'\par
+\par
+const Apipost = () => \{\par
+    const [name, setName] = useState("")\par
+    const [email, setEmail] = useState("")\par
+    const [password, setPassword] = useState("")\par
+\par
+    const submit = () => \{\par
+        // console.log(name, email, password);\par
+        let data = \{ name, email, password \}\par
+        // console.log(data);\par
+        fetch("  {{\field{\*\fldinst{HYPERLINK http://localhost:5000/user }}{\fldrslt{http://localhost:5000/user\ul0\cf0}}}}\f0\fs24 ", \{\par
+            method: "POST",\par
+            headers: \{\par
+                "Content-Type": "application/json"\par
+            \},\par
+            body: JSON.stringify(data)\par
+        \}).then((result)=>\{\par
+            result.json().then((rest)=>\{\par
+                console.log(rest);\par
+            \})\par
+        \})\par
+    \}\par
+    return (\par
+        <>\par
+            <h1>Api post</h1>\par
+            <div className='input'>\par
+            Username <input type="text" className='input1'\par
+                value=\{name\} onChange=\{(e) => setName(e.target.value)\} placeholder='enter your name' /> <br />\par
+            Email <input className='input2' type="email"\par
+                value=\{email\} onChange=\{(e) => setEmail(e.target.value)\} placeholder='enter your email' /> <br />\par
+            Password <input type="password" className='input3'\par
+                value=\{password\} onChange=\{(e) => setPassword(e.target.value)\} placeholder='enter your password' /> <br />\par
+            <button onClick=\{submit\}>submit</button>\par
+            </div>\par
+\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Apipost;\par
+\par
+\b\i 50. Apipost.css Page\b0\par
+\i0 h1, .input \{\par
+    text-align: center;\par
+\}\par
+\par
+.input1 \{\par
+    margin-bottom: 10px ;\par
+\}\par
+.input2 \{\par
+    margin-bottom: 10px ;\par
+\}\par
+.input3 \{\par
+    margin-bottom: 10px ;\par
+\}\par
+.input button\{\par
+    margin-bottom: 100px;\par
+\}\par
+\par
+\b\i 51. CRUD.jsx Page\b0\par
+\i0 import React, \{ useState \} from 'react';\par
+import './Crud.css'\par
+\par
+const Crud = () => \{\par
+    const [name, setName] = useState("")\par
+    const [alldata, setAlldata] = useState([])\par
+    const [show, setShow] = useState(false)\par
+    const [edittext, setEdittext] = useState("")\par
+    const dataadd = () => \{\par
+        console.log(name);\par
+        if (name.length !== 0) \{\par
+            setAlldata(newdata => [...newdata, name])\par
+            setName("")\par
+        \}\par
+    \}\par
+    console.log(alldata);\par
+    const deletdata = (index) => \{\par
+        alldata.splice(index, 1)\par
+        console.log('dlt');\par
+        setAlldata([...alldata])\par
+    \}\par
+    const editdata = (index) => \{\par
+        console.log('edit');\par
+        setName(alldata[index])\par
+        setShow(true)\par
+        setEdittext(index)\par
+    \}\par
+    const updatedata = () => \{\par
+        alldata.splice(edittext,1,name)\par
+        setAlldata([...alldata])\par
+        setName("")\par
+        setShow(false)\par
+\par
+\par
+    \}\par
+    return (\par
+        <>\par
+            <h1>Crud</h1>\par
+            <div className='input-1'>\par
+                \{/* <form > */\}\par
+                <input type="text" value=\{name\} onChange=\{(e) => setName(e.target.value)\} />\par
+               \{!show ?<button onClick=\{dataadd\}>Add-Data</button>: \par
+                <button onClick=\{updatedata\}>Update-Data</button>\}\par
+                \{/* </form> */\}\par
+            </div>\par
+            \{\par
+                alldata.map((val, i) =>\par
+                    <div className='but'>\par
+                        <h1>\{val\}</h1>\par
+                        \{/* <h1>\{i\}</h1> */\}\par
+                        <button className='edit' onClick=\{() => editdata(i)\}>Edit</button>\par
+                        <button className='delet' onClick=\{() => deletdata(i)\}>Delet</button>\par
+                    </div>\par
+                )\par
+            \}\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Crud;\par
+\par
+\b\i 52. Crud.css Page\b0\par
+\i0 .input-1\{\par
+    text-align: center ;\par
+    margin-bottom: 200px;\par
+\}\par
+.input-1 button\{\par
+    background-color: khaki;\par
+\}\par
+.but\{\par
+    text-align: center;\par
+\}\par
+.edit\{\par
+    text-align: center;\par
+    background-color: rgb(56, 233, 56);\par
+    padding: 5px 30px;\par
+    margin: 5px;\par
+\}\par
+.delet \{\par
+    text-align: center;\par
+    background-color: rgb(255, 0, 13);\par
+    padding: 5px 30px;\par
+\}\par
+\b\i\fs22\par
+}
+ 
