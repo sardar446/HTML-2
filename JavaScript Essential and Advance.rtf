@@ -1,0 +1,558 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Cambria Math;}{\f3\fnil\fcharset0 Cambria Math;}{\f4\fnil\fcharset0 Cambria;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mmathFont2\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\i\f0\fs44\lang9 JavaScript Essentials\par
+
+\pard\sa200\sl276\slmult1\i0\fs28 1. \f1 What is JavaScript?\par
+\f0\lang16393 Ans.\b0\fs24  \par
+JavaScript is a high-level, interpreted programming language. It is one of the three core technologies of the World Wide Web, along with HTML and CSS. JavaScript is used to make web pages interactive and dynamic, and to provide functionality for a wide range of web applications.\par
+JavaScript is a text-based programming language. It is written in a file with a .js extension, and it is interpreted by the browser when a web page is loaded. JavaScript can be used to add interactivity to web pages, such as creating animations, validating forms, and playing audio and video. It can also be used to create web applications, such as online games and social networking sites.\par
+JavaScript is a powerful and versatile programming language. It is easy to learn and use, and it is supported by all major web browsers. If you are interested in developing web applications, JavaScript is a language that you should learn.\par
+\b Here are some of the benefits of using JavaScript:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 It is a lightweight language, so it does not slow down your web pages.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 It is easy to learn and use, even for beginners.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 It is supported by all major web browsers.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 It is a versatile language that can be used to create a wide range of web applications.\par
+If you are interested in learning more about JavaScript, there are many resources available online. You can find tutorials, articles, and books that will teach you the basics of the language. Once you have a basic understanding of JavaScript, you can start practicing by creating your own web applications.\b\f1\fs28\lang9  \par
+\f0\lang16393 2. \f1 What is the use of isNaN function? \par
+\f0 Ans.\b0\fs24  \par
+The isNaN() function is used to check if a value is a Not-a-Number (NaN) value. NaN is a special value that represents an invalid number. It can be returned by mathematical operations that cannot be performed, such as dividing by zero. It can also be assigned to a variable directly.\par
+The isNaN() function is useful for checking if a value is valid before using it in a calculation. For example, the following code will print "Error: NaN" because the value of x is NaN:\par
+x = NaN;\par
+\par
+y = x + 1;\par
+console.log(y);\par
+\par
+However, the following code will print "1" because the value of x is converted to a number before being used in the calculation:\par
+x = NaN;\par
+y = Number(x) + 1;\par
+console.log(y);\par
+\par
+The isNaN() function can also be used to check if a variable is undefined. A variable is undefined if it has not been assigned a value. The following code will print "true" because the variable x is undefined:\par
+x;\par
+console.isNaN(x);\par
+\par
+The isNaN() function is a useful tool for checking if a value is valid before using it in a calculation. It can help to prevent errors and ensure that your code is working as expected.\par
+\b\fs28 3. \f1 What is negative Infinity?\par
+\f0 Ans.\b0\fs24\par
+Negative infinity is the concept of numbers that go on forever and get infinitely negative. It is the opposite of positive infinity, which is when numbers get infinitely positive. The symbol for negative infinity is \ldblquote -\f2\u8734?\rdblquote\f0 . \par
+In math, infinity is not a specific number. It is the limit point for a positive number that can be arbitrarily large. Negative infinity is a negative number that can be arbitrarily negative. \par
+Negative infinity is less than any real number. In JavaScript, a number reaches negative infinity when it exceeds the lower limit for a number: -1.797693134862316E+308. \par
+\b\fs28 4. Which\f3  \f0 company\f3  \f0 developed\f3  \f0 JavaScript\f3 ?\par
+\f4 Ans.\b0\fs24  \tab\par
+\f3 JavaScript was developed by Brendan Eich at Netscape Communications Corporation in 1995. It was originally called LiveScript, but was renamed to JavaScript in 1995 to capitalize on the popularity of the Java programming language.\par
+JavaScript is a high-level, interpreted programming language. It is one of the three core technologies of the World Wide Web, along with HTML and CSS. JavaScript is used to add interactivity to web pages, and to make web pages more dynamic and engaging.\par
+JavaScript is a very popular programming language, and it is used by millions of developers around the world. It is also one of the most in-demand programming languages, and there are many jobs available for JavaScript developers.\par
+\b Here are some of the benefits of using JavaScript:\par
+\f1\fs28\lang9\bullet  \b0\f3\fs24 JavaScript is a very versatile language. It can be used to create a wide variety of applications, from simple web pages to complex web applications.\par
+\b\f1\fs28\bullet  \b0\f3\fs24 JavaScript is a very easy language to learn. There are many resources available to help you learn JavaScript, and it is a relatively easy language to pick up.\par
+\b\f1\fs28\bullet  \b0\f3\fs24 JavaScript is a very powerful language. It can be used to create complex and sophisticated applications.\par
+\b\f1\fs28\bullet  \b0\f3\fs24 JavaScript is a very popular language. There is a large community of JavaScript developers, and there are many resources available to help you learn and use JavaScript.\par
+If you are interested in learning JavaScript, there are many resources available to help you get started. There are many online tutorials and courses available, and there are also many books available on the subject.\par
+\b\fs28 5. What are undeclared and undefined variables?\par
+Ans.\b0\fs24  \par
+\b Undefined:\b0  It occurs when a variable has been declared but has not been assigned any value. Undefined is not a keyword. \b Undeclared:\b0  It occurs when we try to access any variable that is not initialized or declared earlier using the var or const keyword.\b\fs28  \par
+\b0\f1\fs24 In JavaScript, an undeclared variable is one that has not been defined in the current scope. An undefined variable is one that has been declared but not given a value. \par
+\b Here are some examples of undeclared and undefined variables: \par
+\fs28\bullet  \b0\fs24 Undeclared: variable = 1\par
+\b\fs28\bullet  \b0\fs24 Undefined: let otherVariable;\par
+\b Here are some ways to fix an undefined variable: \par
+\fs28\bullet  \b0\fs24 Rename the variable\par
+\b\fs28\bullet  \b0\fs24 Re-insert the variable\par
+\b\fs28\bullet  \b0\fs24 Add the variable to the project\par
+\b\f0\fs28\lang16393 6. \f1 Write the code for adding new elements dynamically?\par
+\f0 Ans.\b0\fs24\par
+\b Here is the code for adding new elements dynamically in JavaScript:\par
+\b0 // Create a new element\par
+const newElement = document.createElement("div");\par
+// Set the attributes of the new element\par
+newElement.setAttribute("class", "my-new-element");\par
+// Add the new element to the DOM\par
+document.body.appendChild(newElement);\par
+\par
+You can also use the createElement() method to create new elements of any type, such as p, img, or button. For example, to create a new <p> element, you would use the following code:\par
+const newParagraph = document.createElement("p");\par
+// Set the text content of the new paragraph\par
+newParagraph.textContent = "This is my new paragraph!";\par
+// Add the new paragraph to the DOM\par
+document.body.appendChild(newParagraph);\par
+\par
+You can also use the appendChild() method to add elements to other elements. For example, to add the new <p> element to the <div> element with the class my-container, you would use the following code:\par
+const myContainer = document.querySelector(".my-container");\par
+// Add the new paragraph to the `<div>` element\par
+myContainer.appendChild(newParagraph);\par
+You can use these methods to dynamically add any type of element to the DOM. This can be useful for creating interactive and dynamic web applications.\b\f1\fs28  \par
+\f0 7. \f1 What is the difference between ViewState and SessionState?\par
+\f0 Ans.\b0\fs24  \par
+The basic difference between these two is that the \b ViewState\b0  is to manage state at the client's end, making state management easy for end-user while \b SessionState\b0  manages state at the server's end, making it easy to manage content from this end too. ViewState: It is maintained at only one level that is page-level.\par
+\b ViewState and SessionState are used to manage state in JavaScript: \par
+\f1\fs28\lang9\bullet  \f0\fs24\lang16393 ViewState\par
+\b0 Manages state at the client's end. It preserves user input and component-specific state during page navigation or postbacks.\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 SessionState\par
+\b0 Manages state at the server's end. It maintains user-specific data throughout a user's session on a website.\par
+\par
+\b Here's some more information about ViewState and SessionState: \par
+\f1\fs28\lang9\bullet  \f0\fs24\lang16393 ViewState\par
+\b0 Maintains state at the page level. It's used to preserve the values of controls when a post back operation is done.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 SessionState\par
+\b0 Maintains data in the browser session. It's usually cleared after a period of inactivity from the user.\par
+ViewState is used to access stored data for a specific page. SessionState is used to access stored data over a website or web application. \b\f1\fs28  \f0\lang9\par
+\lang16393 8. \f1 What is === operator?\par
+\f0 Ans.\b0\fs24\par
+The strict equality operator, also known as triple equals, is represented by the symbol ===. It compares the value and type of its operands. \par
+\b In JavaScript, the === operator: \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Returns a Boolean result\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Always considers operands of different types to be different\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Performs type casting for equality\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Returns false for values that are not of a similar type\par
+\b For example, if you compare 2 with \ldblquote 2\rdblquote  using ===, it will return a false value. \par
+The === operator is used in the following programming languages: \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Java: Compares the values and type of two variables\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Swift: Returns false when comparing two references to different object instances.\par
+\b\fs28 9. \f1 How can the style/class of an element be changed?\par
+\f0 Ans.\b0\fs24  \par
+Element Class Names\par
+Another way to alter the style of an element is by \b changing its class attribute\b0 . class is a reserved word in JavaScript, so in order to access the element's class, you use element. \b\f1\fs28   \par
+\f0 10. \f1 How to read and write a file using JavaScript?\par
+\f0 Ans.\b0\fs24  \par
+\b There are two main ways to read and write a file using JavaScript:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Using the File System Access API:\par
+\i This API is a newer way to read and write files, and it is supported by all modern browsers. It is also more secure than the older methods, as it does not require the user to grant the website permission to access their entire file system.\par
+\b\i0\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Using the File API:\par
+\i This API is an older way to read and write files, and it is not supported by all browsers. It is also less secure than the File System Access API, as it requires the user to grant the website permission to access their entire file system.\par
+\par
+\b\i0 To read a file using the File System Access API, you can use the following steps:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Get the file handle for the file you want to read.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Create a new FileReader object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the readAsText() method on the FileReader object, passing in the file handle as the argument.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Add an event listener for the load event on the FileReader object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 When the load event is fired, the result property of the FileReader object will contain the contents of the file.\par
+\par
+\b To write a file using the File System Access API, you can use the following steps:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Get the file handle for the file you want to write to.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Create a new Blob object, passing in the data you want to write to the file as the argument.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Create a new FileWriter object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the write() method on the FileWriter object, passing in the file handle and the Blob object as the arguments.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Add an event listener for the write event on the FileWriter object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 When the write event is fired, the result property of the FileWriter object will be a Boolean value indicating whether the file was written successfully.\par
+\par
+\b To read a file using the File API, you can use the following steps:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Create a new FileReader object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the readAsText() method on the FileReader object, passing in the file path as the argument.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Add an event listener for the load event on the FileReader object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 When the load event is fired, the result property of the FileReader object will contain the contents of the file.\par
+\par
+\b To write a file using the File API, you can use the following steps:\par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Create a new FileWriter object.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the open() method on the FileWriter object, passing in the file path as the argument.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the write() method on the FileWriter object, passing in the data you want to write to the file as the argument.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Call the close() method on the FileWriter object.\b\f1\fs28  \par
+\par
+\f0 11. \f1 What are all the looping structures in JavaScript?\par
+\f0 Ans.\b0\fs24  \par
+\b There are five main looping structures in JavaScript:\par
+\f1\fs28\lang9\bullet  \f0\fs24\lang16393 for loop:\b0  The for loop is used to iterate over a sequence of elements. The syntax is:\par
+\b for (initialization; condition; increment) \{\par
+  // code block\par
+\}\par
+\b0\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 while loop:\b0  The while loop is used to iterate over a block of code while a condition is true. The syntax is:\par
+\b while (condition) \{\par
+  // code block\par
+\}\par
+\b0\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 do...while loop:\b0  The do...while loop is similar to the while loop, but the code block is always executed at least once. The syntax is:\par
+\b do \{\par
+  // code block\par
+\} while (condition);\par
+\b0\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 for...in loop:\b0  The for...in loop is used to iterate over the properties of an object. The syntax is:\par
+\b for (property in object) \{\par
+  // code block\par
+\}\par
+\b0\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 for...of loop:\b0  The for...of loop is used to iterate over the values of an iterable object. The syntax is:\par
+\b for (value of iterable) \{\par
+  // code block\par
+\}\f1\fs28  \par
+\f0 12. \f1 How can you convert the string of any base to an integer in JavaScript?\par
+\f0 Ans.\b0\fs24  \par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 There are a few ways to convert a string of any base to an integer in JavaScript. One way is to use the parseInt() function. The parseInt() function takes a string as its first argument and a radix (base) as its second argument. The radix is the number system that the string is in. For example, if the string is in base 10, the radix would be 10. If the string is in base 16, the radix would be 16. The parseInt() function will return the integer value of the string, converted to the specified radix.\par
+\b For example, to convert the string "1010" to an integer in base 2, you would use the following code:\par
+parseInt("1010", 2);\par
+This code would return the integer 10.\par
+\b0\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Another way to convert a string of any base to an integer in JavaScript is to use a loop. The loop would iterate over the characters of the string and convert each character to an integer. The integers would then be added together to form the final integer value.\par
+\b For example, to convert the string "1010" to an integer in base 2, you would use the following code:\par
+var integer = 0;\par
+for (var i = 0; i < string.length; i++) \{\par
+  integer += parseInt(string[i], 2);\par
+\}\b0\par
+\b This code would return the integer 10.\par
+\b0\par
+\i The best way to convert a string of any base to an integer in JavaScript depends on the specific needs of the application. If the string is always in the same base, then the parseInt() function is the most efficient way to convert the string to an integer. If the string is in a different base each time, then using a loop is the most efficient way to convert the string to an integer.\b\f1\fs28  \par
+\i0\f0 13. \f1 What is the function of the delete operator? \par
+\f0 Ans.\b0\fs24  \par
+The delete operator in JavaScript removes a property from an object. It can also delete: .Js files, Cookies, Created objects, Functions. \par
+The delete operator removes the property's value and the property itself. The property cannot be used again until it is restored. \par
+The delete operator returns true if it deletes an existing object property. It also returns true if it deletes a non-existent object property, but the object is not affected. \par
+The delete operator is for object properties and does not affect variables or apps. \par
+The delete operator is the reverse process of a new operator. It deallocates all memory allocated for an object. This destroys the object so that its resources can be used for other purposes. \par
+\b\fs28 14. \f1 What are all the types of Pop up boxes available in JavaScript? \par
+\f0 Ans.\b0\fs24\par
+\b There are three types of popup boxes available in JavaScript:\par
+1. Alert box:\par
+\b0\i This is the most basic JavaScript popup. Its primary purpose is to display an alert message to the user. The alert window also includes a button that allows the user to dismiss the Alert.\par
+\b\i0 Example:-\par
+alert("This is an alert box!");\par
+\par
+2. Confirm box:\par
+\b0\i This popup box is used to get a confirmation from the user before performing an action. It has two buttons: "OK" and "Cancel". If the user clicks on the "OK" button, the action is performed. If the user clicks on the "Cancel" button, the action is not performed.\par
+\b\i0 Example:-\par
+var result = confirm("Are you sure you want to delete this file?");\par
+if (result) \{\par
+  // Delete the file\par
+\} else \{\par
+  // Do not delete the file\par
+\}\par
+\b0\par
+\b 3. Prompt box:\par
+\b0\i This popup box is used to get input from the user.\par
+\b\i0 Example:-\par
+var name = prompt("What is your name?");\par
+alert("Hello, " + name + "!");\b0\par
+\b\fs28 15. \f1 What is the use of Void (0)? \par
+\f0 Ans.\b0\fs24\par
+\i In JavaScript, javascript:void(0) returns undefined as a primitive value. It's used to prevent negative effects on a webpage when an expression is inserted. For example, it can prevent a page from reloading when a user clicks a hyperlink. \par
+\b\i0 Here are some other uses of javascript:void(0): \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Prevent unwanted redirects\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Update a value on the webpage\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Prevent the browser from loading a new web page\par
+\b javascript:void(0)\b0  is often used with hyperlinks. However, it's not very common these days because it can be done with HTML/CSS. \par
+\b\fs28 16. \f1 How can a page be forced to load another page in JavaScript?\par
+\f0 Ans.\b0\fs24\par
+\b Approach:\b0  We can use window. location property inside the script tag to forcefully load another page in Javascript. It is a reference to a Location object that is it represents the current location of the document. We can change the URL of a window by accessing it.\b\f1\fs28  \par
+\f0 17. \f1 What are the disadvantages of using innerHTML in JavaScript?\par
+\f0 Ans.\b0\fs24\par
+\b * There are several disadvantages to using innerHTML in JavaScript. Here are some of them:\par
+\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Security risk:\par
+\b0 innerHTML can be used to execute malicious code, such as cross-site scripting (XSS) attacks.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Performance issue:\par
+\b0 innerHTML can be slow, especially if the HTML code is complex.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Can break the document:\par
+\b0 innerHTML can sometimes cause the document to break, especially if the HTML code is not valid.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Loses event handlers:\par
+\b0 innerHTML will remove any event handlers that have been attached to the DOM elements that are replaced.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Overwrites the entire contents:\par
+\b0 innerHTML will overwrite the entire contents of the element that it is used on, including any child elements.\par
+\par
+\b Here are some alternatives to using innerHTML that are more secure and performant:\par
+\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Use the DOM API:\par
+\b0 The DOM API provides a number of methods for adding, removing, and modifying DOM elements. These methods are more secure and performant than using innerHTML.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Use a template engine:\par
+\b0 A template engine is a tool that can be used to generate HTML code from a template. Template engines are more secure and performant than using innerHTML.\par
+\par
+\b\f1\fs28\lang9\bullet  \f0\fs24\lang16393 Use a JavaScript library:\par
+\b0 There are a number of JavaScript libraries that provide functions for adding, removing, and modifying DOM elements. These libraries are more secure and performant than using innerHTML.\b\f1\fs28  \par
+\par
+\b0\fs24\par
+\b\i\f0 * \f1 Disadvantages of innerHTML\par
+\i0\fs28\lang9\bullet  \b0\fs24\lang16393 Event handlers attached to any DOM element are preserved.\par
+\b\fs28\lang9\bullet  \b0\fs24\lang16393 Replacement is done everywhere.\par
+\b\fs28\lang9\bullet  \b0\fs24\lang16393 It is not possible to append innerHTML.\par
+\b\fs28\lang9\bullet  \b0\fs24\lang16393 Breaks the document.\par
+\b\fs28\lang9\bullet  \b0\fs24\lang16393 Used for Cross-site Scripting\f0 .\par
+\par
+
+\pard\sa200\sl276\slmult1\qc\b\i\fs44 JavaScript Advanced\par
+
+\pard\sa200\sl276\slmult1\i0\fs28 1. Write a program to Show an alert.\par
+Ans.\b0\fs24\par
+\b\f1\lang9 function showAlert() \{\par
+  alert("Hello, world!");\par
+\}\par
+\par
+// Create a button and add an onclick event listener\par
+const button = document.querySelector("button");\par
+button.addEventListener("click", showAlert);\par
+\f0\fs28\lang16393 2. What will be the result for these expressions?\par
+A. 5 > 4\par
+Ans.   let a = 5 > 4\par
+        console.log(a);\par
+Result -> True\par
+B. "apple" > "pineapple"\par
+Ans.  let a = "apple" > "pineapple"\par
+        console.log(a);\par
+Result -> False\par
+C. "2" > "12"\par
+Ans.  let a = "2" > "12"\par
+        alert(a);\par
+Result -> True\par
+D. undefined == null\par
+Ans.  undefined == null ?\par
+            alert("True") : alert("False")\par
+Result -> True\par
+E. undefined === null\par
+Ans. undefined === null ?\par
+            alert("True") : alert("False")\par
+Result -> False\par
+F. null == "\\n0\\n" \par
+Ans.  null == "\\n0\\n"  ?\par
+            alert("True") : alert("False")\par
+Result -> False\par
+G. null === +"\\n0\\n" \par
+Ans.  null === +"\\n0\\n"   ?\par
+            alert("True") : alert("False")\par
+Result -> False\par
+3. Will alert be shown?\par
+if ("0") \{ alert( 'Hello'); \}\par
+Ans. \par
+Alert will show this (Hello).\par
+4. What is the code below going to output? alert( null || 2 || undefined );\par
+Ans. \par
+Alert will show this (2).\par
+5. The following function returns true if the parameter age is greater than\par
+18. Otherwise it asks for a confirmation and returns its result:\par
+function\par
+checkAge(age)\par
+\{\par
+if (age> 18) \{ return true; \}\par
+else \{\par
+// ...return confirm (\lquote did parents allow you?');\par
+ \}\par
+\}\par
+Ans. \par
+Result -> True\par
+6. Write the code, one line for each action:\par
+(a) Create an empty object user.\par
+Ans. const obj = \{\};\par
+(b) Add the property name with the value John.\par
+Ans. user.name = "John";\par
+(c) Add the property surname with the value Smith.\par
+Ans. user.surname = "Smith";\par
+(d) Change the value of the name to Pete.\par
+Ans. user.name = "Pete";\par
+(e) Remove the property name from the object.\par
+Ans. delete user.name; \par
+7. Create a form and validate using JavaScript.\par
+Ans. <!DOCTYPE html>\par
+<html lang="en">\par
+\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <style>\par
+        .conteiner \{\par
+            width: 700px;\par
+            background-color: khaki;\par
+            margin: 0 auto;\par
+            font-size: 25px;\par
+            padding: 20px;\par
+        \}\par
+\par
+        input \{\par
+            width: 250px;\par
+            height: 30px;\par
+        \}\par
+\par
+        p \{\par
+            color: red;\par
+            font-size: 15px;\par
+        \}\par
+    </style>\par
+</head>\par
+\par
+<body>\par
+    <section>\par
+        <div class="conteiner">\par
+            <form onsubmit="return validation()">\par
+                <table align="center">\par
+                    <tr>\par
+                        <td><label for="Username">Username</label></td>\par
+                        <td><input type="text" id="Username" placeholder="Enter your Username"></td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td></td>\par
+                        <td>\par
+                            <p id="Usererror"></p>\par
+                        </td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td><label for="Password">Password</label></td>\par
+                        <td><input type="Password" id="Password" placeholder="Enter your Password"></td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td></td>\par
+                        <td>\par
+                            <p id="Passerror"></p>\par
+                        </td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td><label for="Email">Email</label></td>\par
+                        <td><input type="email" id="Email" placeholder="Enter your Email"></td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td></td>\par
+                        <td>\par
+                            <p id="Mailerror"></p>\par
+                        </td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td><label for="Mobile">Mobile</label></td>\par
+                        <td><input type="tel" id="Mobile"></td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td></td>\par
+                        <td>\par
+                            <p id="Mobileerror"></p>\par
+                        </td>\par
+                    </tr>\par
+                    <tr>\par
+                        <td></td>\par
+                        <td><input type="submit" value="login"></td>\par
+                    </tr>\par
+                </table>\par
+            </form>\par
+        </div>\par
+    </section>\par
+    <script>\par
+        let Username = document.getElementById("Username")\par
+        let Password = document.getElementById("Password")\par
+        let Usererror = document.getElementById("Usererror")\par
+        let Passerror = document.getElementById("Passerror")\par
+        let Mailerror = document.getElementById("Mailerror")\par
+        let Mobileerror = document.getElementById("Mobileerror")\par
+        //   console.log(Username);\par
+        // console.log(Password);\par
+        function validation() \{\par
+            console.log(Username.value);\par
+            console.log(Password.value);\par
+            if (Username.value == "") \par
+            \{\par
+                console.log("Enter Username");\par
+                Usererror.innerHTML = "Enter Username"\par
+                event.preventDefault()\par
+            \}\par
+            else \{\par
+                Usererror.innerHTML = ""\par
+            \}\par
+            if (Password.value == "") \{\par
+                Passerror.innerHTML = "Enter Password"\par
+                event.preventDefault()\par
+            \}\par
+             else if (Password.value.length < 8) \{\par
+                Passerror.innerHTML = "Max 8 Char"\par
+                event.preventDefault()\par
+            \}\par
+            else \{\par
+                Passerror.innerHTML = ""\par
+            \}\par
+            if (Email.value == "") \{\par
+                Mailerror.innerHTML = "Enter Email"\par
+                event.preventDefault()\par
+            \}\par
+            else \{\par
+                Mailerror.innerHTML = ""\par
+            \}\par
+            if (Mobile.value == "") \{\par
+                Mobileerror.innerHTML = "Enter Mobile No."\par
+                event.preventDefault()\par
+            \}\par
+              else if (Mobile.value.length < 10) \{\par
+                Mobileerror.innerHTML = "Max 10 Char"\par
+                event.preventDefault()\par
+            \}\par
+            else \{\par
+                Mobileerror.innerHTML = ""\par
+            \}\par
+          \par
+            // return false\par
+        \}\par
+    </script>\par
+</body>\par
+\par
+</html>\par
+8. What is promises.\par
+Ans. \b0\fs24\par
+There are multiple matches for promises, including a commitment, an object, and a value. \par
+A promise is \b a commitment to do or not do something.\b0  It can also be a legally binding declaration that gives the person to whom it is made a right to expect or to claim the performance or forbearance of a specified act. \par
+Synonyms of promise include: Guarantee, Word, Bond, Vow. \par
+\b Promise may also refer to: \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 An object that is associated with an asynchronous task\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 An object that represents an asynchronous operation\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 A value that will be resolved in the future\par
+In JavaScript, a Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value. \par
+\b\fs28 9. What is JSON.\par
+Ans. \par
+\b0\fs24 JSON stands for \b JavaScript Object Notation.\b0  It's a lightweight format for storing and transporting data. JSON is often used when data is sent from a server to a web page. \par
+JSON is a standard text-based format for representing structured data based on JavaScript object syntax. It's independent of any programming language and is a common API output in a wide variety of applications. \par
+\b JSON is: \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Human and machine-readable\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Easy to understand\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Self-describing\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Language-independent\par
+JSON can represent two structured types: objects and arrays. \par
+\b Here are some rules for defining JSON in JavaScript: \par
+\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 The object is always defined inside the curly brackets \{ \}.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Objects are written in key pairs.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 The keys must be strings, and their values must be a valid JSON data type.\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 The keys and values are separated by a colon(\ldblquote :\rdblquote ).\par
+\b\f1\fs28\lang9\bullet  \b0\f0\fs24\lang16393 Each key or value pair is separated by a comma.\par
+JSONP or "JSON with padding" is a complement to the base JSON data format. It allows a page to request and use JSON from a server other than the primary server. \par
+\b\fs28 10. Use fetch method for calling an api\par
+ {{\field{\*\fldinst{HYPERLINK https://fakestoreapi.com/products }}{\fldrslt{https://fakestoreapi.com/products\ul0\cf0}}}}\f0\fs28\par
+Ans.\par
+import React, \{ useEffect, useState \} from 'react';\par
+\par
+\par
+const Api = () => \{\par
+    const [userdata ,setUserdata] = useState([])\par
+\par
+    useEffect(()=>\{\par
+        // First way of call API\par
+        fetch("https://fakestoreapi.com/products").then((result)=>\{\par
+            result.json().then((resp)=>\{\par
+                console.log(resp);\par
+                setUserdata(resp)\par
+            \})\par
+            // console.log(result);\par
+            console.log(userdata);\par
+        \})\par
+\par
+    \},[])\par
+\par
+    return (\par
+        <>\par
+            <h1>Api</h1>\par
+            <table width='50%' border='1'>\par
+                <tr>\par
+                    <td>userId</td>\par
+                    <td>id</td>\par
+                    <td>title</td>\par
+                    <td>completed</td>\par
+                </tr>\par
+                \{\par
+                    userdata.map((item)=>\par
+                    <tr>\par
+                        <td>\{item.userId\}</td>\par
+                        <td>\{item.id\}</td>\par
+                        <td>\{item.title\}</td>\par
+                        <td>\{item.completed\}</td>\par
+                    </tr>\par
+                    )\par
+                \}\par
+            </table>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default Api;\i\f1\lang9\par
+}
+ 
