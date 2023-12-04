@@ -1,0 +1,721 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang16393\deflangfe16393{\fonttbl{\f0\fswiss\fprq2\fcharset0 Bahnschrift SemiLight Condensed;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\nowidctlpar\sa200\sl276\slmult1\f0\fs28\lang9                          \fs48 Software Engineering (SE) \par
+
+\pard\nowidctlpar\sa200                Fundamental of programming \fs22\par
+                                                                     \fs40  \fs22\par
+\b\fs28 1. Define the terms: Website, Webpage, Web browser, Web server, HTML,\par
+CSS.\par
+Ans. \fs24 Website :-\par
+\b0 A website is a collection of linked web pages (plus their associated resources) that share a unique domain name. Each web page of a given website provides explicit links\emdash most of the time in the form of clickable portions of text\emdash that allow the user to move from one page of the website to another.\par
+To access a website, type its domain name in your browser address bar, and the browser will display the website's main web page, or homepage (casually referred as "the home"):\par
+\fs28\par
+\fs24  \b Web page :-\b0\fs22\par
+\fs24 A web page is a simple document displayable by a browser. Such documents are written in the HTML language (which we look into in more detail in other articles). A web page can embed a variety of different types of resources such as:\par
+style information \emdash  controlling a page's look-and-feel\par
+scripts \emdash  which add interactivity to the page\par
+media \emdash  images, sounds, and videos.\par
+\fs22\par
+\b\fs24 Web Browser :-\par
+\b0 The web browser is an application software to explore www (World Wide Web). It provides an interface between the server and the client and requests to the server for web documents and services. It works as a compiler to render HTML which is used to design a webpage. Whenever we search for anything on the internet, the browser loads a web page written in HTML, including text, links, images, and other items such as style sheets and JavaScript functions. Google Chrome, Microsoft Edge, Mozilla Firefox, and Safari are examples of web browsers. \par
+\fs22\par
+\b\fs24 Web server :-\par
+\b0 A web server is a computer hosting one or more websites. "Hosting" means that all the web pages and their supporting files are available on that computer. The web server will send any web page from the website it is hosting to any user's browser, per user request.\par
+\fs22\par
+\fs24 Don't confuse websites and web servers. For example, if you hear someone say, "My website is not responding", it actually means that the web server is not responding and therefore the website is not available. More importantly, since a web server can host multiple websites, the term web server is never used to designate a website, as it could cause great confusion. In our previous example, if we said, "My web server is not responding", it means that multiple websites on that web server are not available.\par
+\b HTML :-\b0\fs22\tab\par
+\fs24  HTML stands for Hyper Text Markup Language and it is the language that is used to define the structure of a web page. HTML is used along with CSS and Javascript to design web pages. HTML is the basic building block of a website. It has different attributes and elements with different properties. Each element has an opening and a closing tag. We can also add images with the help of HTML. \par
+\fs22\par
+\b Example :-\par
+\b0\fs24 <html>\par
+<body>\par
+    <h1>Welcome to GeeksForGeeks</h1>\par
+</body>\par
+</html>\fs22\par
+\b\fs24 CSS :-\fs22\par
+\b0  \fs24 CSS stands for Cascading Style Sheets and it is used to style web documents. It is used to provide the background color and is also used for styling. It can also be used to style the font and change its size. We can also style many different web pages with the same specifications with the help of CSS. CSS is also recommended by World Wide Web Consortium (W3C). It can also be used along with HTML and Javascript to design web pages. \par
+\fs22\par
+\b Example: \b0\par
+\fs24 <html>\par
+<head>\par
+    <style>\par
+        body \{\par
+            background-color: red;\par
+        \}\par
+    </style>\par
+</head>\par
+ \par
+<body>\par
+    <h1>Welcome to GeeksForGeeks!</h1>\par
+ \par
+    <p>This page has red background color</p>\par
+</body>\par
+</html>\par
+\b\fs28 2.Create a webpage to show \ldblquote This is my first HTML page\rdblquote\par
+Ans.\par
+\b0\fs24 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+</head>\par
+<body>\par
+    <h1>This is my first HTML page</h1>\par
+</body>\par
+</html>\b\par
+\fs28 3. Display top 10 IT companies list in html webpage.\par
+Ans. \par
+\b0\fs24 <html>\par
+<body>\par
+    <div>\par
+        <h1>Top 10 It Companies</h1>\par
+    </div>\par
+    <div>\par
+        <ol start="1"><b>\par
+            <li>Microsoft Corporation</li>\par
+            <li>IBM</li>\par
+            <li>Oracle</li>\par
+            <li>Infosys</li>\par
+            <li>Tata Consultancy Services</li>\par
+            <li>Wipro</li>\par
+            <li>Tech Mahindra</li>\par
+            <li>HCLTech</li>\par
+            <li>Amazon</li>\par
+            <li>Apple</li>\par
+        </b></ol>\par
+    </div>\par
+\par
+</body>\par
+</html>\fs22\par
+\b\fs28 4. Create a dropdown list.\par
+Ans.\par
+\b0\fs24 <style>\par
+/* Style The Dropdown Button */\par
+.dropbtn \{\par
+  background-color: #4CAF50;\par
+  color: white;\par
+  padding: 16px;\par
+  font-size: 16px;\par
+  border: none;\par
+  cursor: pointer;\par
+\}\par
+\par
+/* The container <div> - needed to position the dropdown content */\par
+.dropdown \{\par
+  position: relative;\par
+  display: inline-block;\par
+\}\par
+\par
+/* Dropdown Content (Hidden by Default) */\par
+.dropdown-content \{\par
+  display: none;\par
+  position: absolute;\par
+  background-color: #f9f9f9;\par
+  min-width: 160px;\par
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\par
+  z-index: 1;\par
+\}\par
+\par
+/* Links inside the dropdown */\par
+.dropdown-content a \{\par
+  color: black;\par
+  padding: 12px 16px;\par
+  text-decoration: none;\par
+  display: block;\par
+\}\par
+\par
+/* Change color of dropdown links on hover */\par
+.dropdown-content a:hover \{background-color: #f1f1f1\}\par
+\par
+/* Show the dropdown menu on hover */\par
+.dropdown:hover .dropdown-content \{\par
+  display: block;\par
+\}\par
+\par
+/* Change the background color of the dropdown button when the dropdown content is shown */\par
+.dropdown:hover .dropbtn \{\par
+  background-color: #3e8e41;\par
+\}\par
+</style>\par
+\par
+<div class="dropdown">\par
+  <button class="dropbtn">Dropdown</button>\par
+  <div class="dropdown-content">\par
+    <a href="#">Link 1</a>\par
+    <a href="#">Link 2</a>\par
+    <a href="#">Link 3</a>\par
+  </div>\par
+</div>\b\par
+\fs28 5. Create a Table Of collage Management system using row span & cal span.\par
+Ans.\b0  \fs24 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+</head>\par
+<body>\par
+    <h1 align="center"><b>TABLE</b></h1>\par
+    <table border="1" align="center" cellspacing="2" cellpadding="5" Width="50%">\par
+       <tr>\par
+        <td align="center" colspan="2"><b>Invoice #123456789</b></td>\par
+        <td align="center" colspan="2"><b>14 January</b></td>\par
+        <td><b>NUM</b></td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2"><b>Pay to:</b><br>\par
+        Acme Billing Co. <br>\par
+        123 Main St. <br>\par
+        Cityville, NA 12345</td>\par
+        <td colspan="2"><b>Customer:</b><br>\par
+        John Smith <br>\par
+        3421 Willow Way <br>\par
+        Southeast Norhtwestershire, MA 54321</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>"Name" /Description</td>\par
+        <td>1</td>\par
+        <td>@</td>\par
+        <td>Cost</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>Paperclips</td>\par
+        <td>1000</td>\par
+        <td>0.01</td>\par
+        <td>10.00</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>Steples (box)</td>\par
+        <td>100</td>\par
+        <td>1.00</td>\par
+        <td>100.00</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="3" align="center"><b>Subtotal</b></td>\par
+        <td>110</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2" align="center"><b>Tax</b></td>\par
+        <td>8%</td>\par
+        <td>8.80</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="3" align="center"><b>Grand Total</b></td>\par
+        <td>$ 118.80</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2" align="center"><b>02-Mar-20</b></td>\par
+        <td colspan="2">April 10,2020</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td rowspan="3">1</td>\par
+        <td>2</td>\par
+        <td>3</td>\par
+        <td rowspan="3">4</td>\par
+        <td>1</td>\par
+        <tr>\par
+            <td rowspan="2">2</td>\par
+            <td>3</td>\par
+            <td>1</td>\par
+        </tr>\par
+        <tr>\par
+            <td>3</td>\par
+            <td>1</td>\par
+        </tr>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="4">1</td>\par
+        <td>1</td>\par
+       </tr>\par
+    </table>\par
+</body>\par
+</html>\b\par
+\fs28 6. Create below table using HTML table tags.\par
+Ans. \b0\fs22  \fs24 <style>\par
+        .container \{\par
+            background-color: green;\par
+            text-align: center;\par
+            padding: 15px 0;\par
+\par
+        \}\par
+\par
+        table \{\par
+            border-color: white;\par
+            color: white;\par
+        \}\par
+    </style>\par
+</head>\par
+\par
+<body>\par
+    <section>\par
+        <div class="container">\par
+            <h1>European Roulatte</h1>\par
+            <table border="2" align="center" cellspacing="0" cellpadding="10" width="50%">\par
+                <tr>\par
+                    <td rowspan="5">0</td>\par
+                    <td bgcolor="red">3</td>\par
+                    <td bgcolor="black">6</td>\par
+                    <td bgcolor="red">9</td>\par
+                    <td bgcolor="red">12</td>\par
+                    <td bgcolor="black">15</td>\par
+                    <td bgcolor="red">18</td>\par
+                    <td bgcolor="red">21</td>\par
+                    <td bgcolor="black">24</td>\par
+                    <td bgcolor="red">27</td>\par
+                    <td bgcolor="red">30</td>\par
+                    <td bgcolor="black">33</td>\par
+                    <td bgcolor="red">36</td>\par
+                    <td>2 to 1</td>\par
+                </tr>\par
+                <tr>\par
+                    <td bgcolor="black">2</td>\par
+                    <td bgcolor="red">5</td>\par
+                    <td bgcolor="black">8</td>\par
+                    <td bgcolor="black">11</td>\par
+                    <td bgcolor="red">14</td>\par
+                    <td bgcolor="black">17</td>\par
+                    <td bgcolor="black">20</td>\par
+                    <td bgcolor="red">23</td>\par
+                    <td bgcolor="black">26</td>\par
+                    <td bgcolor="black">29</td>\par
+                    <td bgcolor="red">32</td>\par
+                    <td bgcolor="black">35</td>\par
+                    <td>2 to 1</td>\par
+                </tr>\par
+                <tr>\par
+                    <td bgcolor="red">1</td>\par
+                    <td bgcolor="black">4</td>\par
+                    <td bgcolor="red">7</td>\par
+                    <td bgcolor="black">10</td>\par
+                    <td bgcolor="black">13</td>\par
+                    <td bgcolor="red">16</td>\par
+                    <td bgcolor="red">19</td>\par
+                    <td bgcolor="black">22</td>\par
+                    <td bgcolor="red">25</td>\par
+                    <td bgcolor="black">28</td>\par
+                    <td bgcolor="black">31</td>\par
+                    <td bgcolor="red">34</td>\par
+                    <td>2 to 1</td>\par
+                </tr>\par
+                <tr>\par
+                    <td colspan="4">1 st 12</td>\par
+                    <td colspan="4">2 nd 12</td>\par
+                    <td colspan="4">3 rd 12</td>\par
+                    <td rowspan="2"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td colspan="2">1 to 8</td>\par
+                    <td colspan="2">EVEN</td>\par
+                    <td colspan="2" bgcolor="red"></td>\par
+                    <td colspan="2" bgcolor="b"></td>\par
+                    <td colspan="2">ODD</td>\par
+                    <td colspan="2">19 to 36</td>\par
+                </tr>\par
+            </table>\par
+        </div>\par
+    </section>\par
+</body>\par
+\par
+</html>\b\par
+\fs28 7. Create Registration form using HTML, CSS.\par
+Ans. \b0\fs24 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>SARDAR SINGH</title>\par
+    <style>\par
+        fieldset\{\par
+            background: rgb(157, 186, 201);\par
+        \} \par
+    </style>\par
+</head>\par
+<html>\par
+<body>\par
+    <h1 align="center"><b>THIS IS MY FIRST FORM</b></h1>\par
+    <fieldset align="center">\par
+         <legend align="center"></legend>\par
+          <form action="php.backend" method="post">\par
+            <table>\par
+                <tr>\par
+                    </style>\par
+                    <td><label for="Username -">Username -</label></td>\par
+                    <td><input id="Username -" required placeholder="Enter User Id" type="text"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Password -">Password -</label></td>\par
+                    <td><input id="Password -" placeholder="Enter the Password" type="Password"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Email Id -">Email Id -</label></td>\par
+                    <td><input id="Email Id -" type="email"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Mobile No. -">Mobile No. -</label></td>\par
+                    <td><input id="Mobile No. -" name="" type="mob"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="DOB -">DOB -</label></td>\par
+                    <td><input id="DOB -" name="" type="date"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Date & Time -">Date & Time -</label></td>\par
+                    <td><input id="Date & Time -" name="" type="datetime-local"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Gender -">Gender -</label></td>\par
+                    <td>\par
+                        Male<input type="radio" name="Gender" id="">\par
+                        Female<input type="radio" name="Gender" id="">\par
+                        Other<input type="radio" name="Gender" id="">\par
+                    </td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Hobbies -">Hobbies -</label></td>\par
+                    <td>\par
+                        Cricket<input type="checkbox" checked disabled name="" id="">\par
+                        Drawing<input type="checkbox" name="" id="">\par
+                        Singing<input type="checkbox" name="" id="">\par
+                        Photography<input type="checkbox" name="" id="">\par
+                    </td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Hobbies-Enter -">Hobbies-Enter -</label></td>\par
+                    <td><textarea name="" id="" cols="30" rows="5"></textarea></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="City -">City -</label></td>\par
+                    <td>\par
+                        <select>\par
+                            <option value="None">None</option>\par
+                            <option value="Ahmedabad">Ahmedabad</option>\par
+                            <option value="Gandhinagar">Gandhinagar</option>\par
+                            <option value="Mumbai">Mumbai</option>\par
+                            <option value="Jaipur">Jaipur </option>\par
+                        </select>\par
+                    </td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Education -">Education -</label></td>\par
+                    <td>\par
+                        <select multiple>\par
+                            <option value="">None</option>\par
+                            <option value="">10th</option>\par
+                            <option value="">12th</option> \par
+                            <option value="">BA</option>\par
+                            <option value="">ER.</option>\par
+                            <option value="">DR.</option>\par
+                            <option value="">PHD.</option>\par
+                        </select>\par
+                    </td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="color -">color -</label></td>\par
+                    <td><input type="color"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Readmore -">Readmore -</label>\par
+                    <td><button>Readmore</button></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="file">Select Your Profile Pic -</label></td>\par
+                    <td><input type="file" accept="img" name="" id=""></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Range -">Range -</label></td>\par
+                    <td>0 <input type="range" value="25" name="" id="range"> 100</td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Submit -">Submit -</label></td>\par
+                    <td><input type="Submit" value="Savedata"></td>\par
+                </tr>\par
+                <tr>\par
+                    <td><label for="Submit -">Submit -</label></td>\par
+                    <td><input type="reset" value="Resetdata"></td>\par
+                </tr>\par
+             </table>\par
+         </form>\par
+     </fieldset>                    \par
+</body>\par
+</html>\b\fs28\par
+8. In how many ways can a CSS be integrated as a web page? \par
+Ans. \par
+\fs22 Using CSS :-\par
+\b0\fs24 CSS can be added to HTML documents in 3 ways:\par
+\b Inline\b0  - by using the style attribute inside HTML elements\par
+\b Internal\b0  - by using a <style> element in the <head> section\par
+\b External\b0  - by using a <link> element to link to an external CSS file\par
+The most common way to add CSS, is to keep the styles in external CSS files. However, in this tutorial we will use inline and internal styles, because this is easier to demonstrate, and easier for you to try it yourself.\par
+\par
+\b Inline CSS :-\par
+\b0 An inline CSS is used to apply a unique style to a single HTML element.\par
+An inline CSS uses the style attribute of an HTML element.\par
+The following example sets the text color of the <h1> element to blue, and the text color of the <p> element to red:\par
+\b Internal CSS :-\par
+\b0 An internal CSS is used to define a style for a single HTML page.\par
+An internal CSS is defined in the <head> section of an HTML page, within a <style> element.\par
+The following example sets the text color of ALL the <h1> elements (on that page) to blue, and the text color of ALL the <p> elements to red. In addition, the page will be displayed with a "powderblue" background color: \par
+\b External CSS :-\par
+\b0 An external style sheet is used to define the style for many HTML pages.\par
+To use an external style sheet, add a link to it in the <head> section of each HTML page:\par
+\b\fs28 9. Create simple three pages using External CSS, Internal CSS, and Inline\par
+CSS. \par
+
+\pard\nowidctlpar\ri11\sa200 Ans. \par
+\fs24 External CSS :-\par
+
+\pard\nowidctlpar\sa200\b0 This CSS type is a more efficient method, especially for styling a large website. By editing one .css file, you can change your entire site at once.\par
+\par
+Follow these steps to use external CSS:\par
+1. External CSS :-\par
+# calculater.css\par
+\fs22 .conteiner \{\par
+    text-align: center;\par
+\}\par
+\par
+.row \{\par
+    display: flex;\par
+    justify-content: center;\par
+\}\par
+\par
+.btn \{\par
+    font-size: 20px;\par
+    width: 50px;\par
+    margin: 8px 8px;\par
+    padding: 15px;\par
+    border-radius: 5px;\par
+    cursor: pointer;\par
+\}\par
+\par
+.row input \{\par
+    font-size: 16px;\par
+    padding: 10px 25px;\par
+    margin: 10px auto;\par
+    border: 3px solid black;\par
+    border-radius: 3px;\par
+\}\par
+\fs24 2. Internal CSS :-\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+    <style>\par
+        .conteiner \{\par
+    background-color: rgb(0, 162, 255);\par
+    text-align: center;\par
+\}\par
+\par
+.row \{\par
+    display: flex;\par
+    justify-content: center;\par
+\}\par
+\par
+.btn \{\par
+    font-size: 20px;\par
+    width: 50px;\par
+    margin: 8px 8px;\par
+    padding: 15px;\par
+    border-radius: 5px;\par
+    cursor: pointer;\par
+\}\par
+\par
+.row input \{\par
+    font-size: 16px;\par
+    padding: 10px 25px;\par
+    margin: 10px auto;\par
+    border: 3px solid black;\par
+    border-radius: 3px;\par
+\}\par
+    </style>\par
+</head>\par
+\par
+<body>\par
+</body>\par
+3. Inline CSS :-\par
+ <table border="1" align="center" cellspacing="2" cellpadding="5" Width="50%">\par
+       <tr>\par
+        <td align="center" colspan="2"><b>Invoice #123456789</b></td>\par
+        <td align="center" colspan="2"><b>14 January</b></td>\par
+        <td><b>NUM</b></td>\par
+       </tr>\par
+\b\fs28 10. Create below page using HTML CSS.\par
+Ans. \par
+\b0\fs24 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Document</title>\par
+</head>\par
+<body>\par
+    <h1 align="center"><b>TABLE</b></h1>\par
+    <table border="1" align="center" cellspacing="2" cellpadding="5" Width="50%">\par
+       <tr>\par
+        <td align="center" colspan="2"><b>Invoice #123456789</b></td>\par
+        <td align="center" colspan="2"><b>14 January</b></td>\par
+        <td><b>NUM</b></td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2"><b>Pay to:</b><br>\par
+        Acme Billing Co. <br>\par
+        123 Main St. <br>\par
+        Cityville, NA 12345</td>\par
+        <td colspan="2"><b>Customer:</b><br>\par
+        John Smith <br>\par
+        3421 Willow Way <br>\par
+        Southeast Norhtwestershire, MA 54321</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>"Name" /Description</td>\par
+        <td>1</td>\par
+        <td>@</td>\par
+        <td>Cost</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>Paperclips</td>\par
+        <td>1000</td>\par
+        <td>0.01</td>\par
+        <td>10.00</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td>Steples (box)</td>\par
+        <td>100</td>\par
+        <td>1.00</td>\par
+        <td>100.00</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="3" align="center"><b>Subtotal</b></td>\par
+        <td>110</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2" align="center"><b>Tax</b></td>\par
+        <td>8%</td>\par
+        <td>8.80</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="3" align="center"><b>Grand Total</b></td>\par
+        <td>$ 118.80</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="2" align="center"><b>02-Mar-20</b></td>\par
+        <td colspan="2">April 10,2020</td>\par
+        <td>1</td>\par
+       </tr>\par
+       <tr>\par
+        <td rowspan="3">1</td>\par
+        <td>2</td>\par
+        <td>3</td>\par
+        <td rowspan="3">4</td>\par
+        <td>1</td>\par
+        <tr>\par
+            <td rowspan="2">2</td>\par
+            <td>3</td>\par
+            <td>1</td>\par
+        </tr>\par
+        <tr>\par
+            <td>3</td>\par
+            <td>1</td>\par
+        </tr>\par
+       </tr>\par
+       <tr>\par
+        <td colspan="4">1</td>\par
+        <td>1</td>\par
+       </tr>\par
+    </table>\par
+</body>\par
+</html>\par
+\b\fs28 11. Create link-pseudo classes using external css, to format links on the pages. \par
+Ans. \par
+\b0 HTML\b\par
+\b0\fs24 <a href="#ordinary-target">This is an ordinary link.</a><br />\par
+<a href="">You've already visited this link.</a><br />\par
+<a>Placeholder link (won't get styled)</a>\par
+\fs28 CSS\par
+\fs24 a:link \{\par
+  background-color: gold;\par
+  color: green;\par
+\}\par
+\b\fs28 12. Create a dynamic pseudo class using HTML, CSS .\par
+Ans. \b0\fs24\par
+<!DOCTYPE html>\par
+<html>\par
+<head>\par
+<meta charset="utf-8">\par
+<title>Challenge: Grouped animals</title>\par
+<style>\par
+p \{\par
+font-family: sans-serif;\par
+\}\par
+\par
+img \{\par
+max-width: 150px;\par
+\}\par
+\par
+h1, h2 \{\par
+font-family: fantasy;\par
+border-bottom: 1px solid rgb(230, 230, 230);\par
+padding: 3px;\par
+\}\par
+\par
+h1:hover, h2:hover \{\par
+background-color: rgb(248, 255, 199);\par
+\}\par
+</style>\par
+</head>\par
+<body>\par
+\par
+<h1>Animal group names</h1>\par
+\par
+<p>For many species of animals, there are names that we use to refer to a group of them - like a flock of birds. Here are a few you might not know.</p>\par
+\par
+<h2>A skulk of foxes</h2>\par
+\par
+<p>Also called a "leash."</p>\par
+\par
+<img src="{{\field{\*\fldinst{HYPERLINK https://www.kasandbox.org/programming-images/animals/fox.png }}{\fldrslt{https://www.kasandbox.org/programming-images/animals/fox.png\ul0\cf0}}}}\f0\fs24 ">\par
+<img src="{{\field{\*\fldinst{HYPERLINK https://www.kasandbox.org/programming-images/animals/fox.png }}{\fldrslt{https://www.kasandbox.org/programming-images/animals/fox.png\ul0\cf0}}}}\f0\fs24 ">\par
+\par
+<h2>A clowder of cats</h2>\par
+\par
+<p>Also called a "pounce", "glaring", "kindle", or "clutter."</p>\par
+\par
+<img src="{{\field{\*\fldinst{HYPERLINK https://www.kasandbox.org/programming-images/animals/cat.png }}{\fldrslt{https://www.kasandbox.org/programming-images/animals/cat.png\ul0\cf0}}}}\f0\fs24 ">\par
+<img src="{{\field{\*\fldinst{HYPERLINK https://www.kasandbox.org/programming-images/animals/cat.png }}{\fldrslt{https://www.kasandbox.org/programming-images/animals/cat.png\ul0\cf0}}}}\f0\fs24 ">\par
+\par
+<p>\par
+<a href="{{\field{\*\fldinst{HYPERLINK http://en.wikipedia.org/wiki/List_of_animal_names }}{\fldrslt{http://en.wikipedia.org/wiki/List_of_animal_names\ul0\cf0}}}}\f0\fs24 ">Learn more on Wikipedia</a>\par
+</p>\par
+</body>\par
+</html>\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 

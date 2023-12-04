@@ -1,0 +1,161 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.22621}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\i\f0\fs44\lang9 React - Components, State, Props\par
+
+\pard\sa200\sl276\slmult1\i0\fs28 1. \f1 What is React Js?\par
+\f0\lang16393 Ans.\b0\fs24\par
+React is a JavaScript library for building user interfaces. It is declarative, efficient, and flexible. React makes it easy to create interactive UIs by using a component-based approach.\par
+Components are reusable pieces of code that can be combined to create complex UIs. React also uses a virtual DOM, which makes it very fast and efficient at updating the UI.\par
+\b\fs28 2. \f1 What is NPM in React Js?\par
+\f0 Ans.\b0\fs24  \par
+NPM, the Node package manager is used for managing and sharing the packages for either React or Angular. NPM will be installed along with Nodejs. Node. js can be downloaded and installed from the official NodeJs website.\par
+\b\fs28 3. \f1 What is Role of Node Js in react Js?\par
+\f0 Ans.\b0\fs24  \par
+Node.js is a JavaScript runtime environment that allows developers to run JavaScript code outside of a browser. It is commonly used for server-side development, but it can also be used for front-end development and mobile app development.\par
+React.js is a JavaScript library for building user interfaces. It is declarative, efficient, and flexible. React.js is often used in conjunction with Node.js for full-stack development.\par
+The role of Node.js in React.js is to provide a server-side platform for developing and running React applications. Node.js can be used to create RESTful APIs, which React applications can consume to fetch data and render user interfaces.\b\f1\fs28   \lang9  \par
+\f0\lang16393 4. \f1 What is CLI command In React Js? \par
+\f0 Ans.\b0\fs24  \par
+React has its own \b command-line interface (CLI) \b0 commands. However, these CLI commands are currently only \i used to create a passable version of a react application using the command line.\par
+\b\i0\fs28 5. \f1 What is Components in React Js?\par
+\f0 Ans.\b0\fs24  \par
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.\par
+\b\fs28 6. \f1 What is Header and Content Components in React Js?\par
+\f0 Ans.\b0\fs24  \par
+Headers and content components are two of the most common types of components. A header component typically contains the logo, title, and navigation for a website or app. A content component, on the other hand, contains the main content of the page, such as text, images, and videos.\par
+Headers and content components are often used together to create a well-structured and organized UI. For example, a header component might be used at the top of a page, and a content component might be used below the header. This creates a clear separation between the header and the main content of the page, which makes it easier for users to scan and understand the page.\par
+There are many different ways to create header and content components in React. One common approach is to use a library like Material UI or Bootstrap. These libraries provide a variety of pre-built components that can be used to create headers and content components quickly and easily.\par
+Another approach is to create custom header and content components from scratch. This gives you more control over the look and feel of your components, but it can be more time-consuming.\par
+No matter which approach you choose, header and content components are essential for creating a well-structured and organized UI in React.\par
+\b\fs28 7. \f1 How to install React Js on Windows, linux Operating System? How\par
+to install NPM and How to check version of NPM? \par
+\f0 Ans.\b0\fs24  \par
+\b Step 1: \b0 Install Node.js installer for windows. Click on this link. Here install the LTS version (the one present on the left). Once downloaded open NodeJS without disturbing other settings, click on the Next button until it\rquote s completely installed.\par
+\b Step 2:\b0  Open command prompt  to check whether it is completely installed or not type the command:\f1  \par
+\i\f0                                           node -v\par
+\i0 If the installation went well it will give you the version you have installed  \par
+\b Step 3:\b0  Now in the terminal run the below command: \par
+\i                          npm install -g create-react-app  \b\f1\fs28  \par
+\b0\i0\fs24 It will globally install react app for you. To check everything  went well run the command\f0 :\f1   \par
+\i\f0                              \f1 create-react-app --version\par
+\i0 If everything went well it will give you the installed version of react app\par
+\par
+\b Step 4:\f0  \b0\f1 Now Create a new folder where you want to make your react app using the below command: \par
+\i\f0                                my-app\par
+\b\i0 Note:\b0  The newfolder in the above command is the name of the folder and can be anything.\par
+Move inside the same folder using the below command:\par
+\i                 cd my-app (your folder name)\b\f1\fs28  \par
+\i0\f0\fs24\lang9 Step 5:\b0  Now inside this folder run the command \f1\endash >\par
+\i\f0\lang16393              \f1\lang9 create-react-app reactfirst \f0\lang16393 my-app\par
+\i0 It will take some time to install the required dependencies\par
+\b NOTE:\b0  Due to npm naming restrictions, names can no longer contain capital letters, thus type your app\rquote s name in lowercase.\par
+\b Step 6:\b0  Now open the IDE of your choice for eg.  Visual studio code and open the folder where you have installed the react app newfolder (in the above example)  inside the folder you will see your app\rquote s name reactapp (In our example). Use the terminal and move inside your app name folder.Use command  cd my-app (your app name)\par
+\b Step 7:\b0  To start your app run the below command :\par
+\i                             npm start  \par
+\i0 Once you run the above command a new tab will open in your browser showing React logo as show.\par
+\b Congratulation you have successfully installed the react-app and are ready to build awesome websites and app \par
+\fs28 8. \f1 How to check version of React Js?\par
+\f0 Ans.\b0\fs24\par
+There are a few ways to check the version of React Js that you are using.\par
+One way is to check the package.json file. Open the package.json file in your project directory and look for the "react" dependency. The version number will be listed next to it.\par
+\b\fs28 9.\f1  How to change in components of React Js? \par
+\f0 Ans.\b0\fs24  \par
+\b setState():-\b0  setState() enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.\b\f1\fs28  \par
+\f0 10. \f1 How to Create a List View in React Js?\par
+\f0 Ans.\b0\fs24  \par
+import React, \{ Component \} from "react"; \par
+import \{ Text, View, StyleSheet, ListView \} from "react-native"; \par
+import \{ Icon \} from "react-native-elements"; \par
+\par
+const ds = new ListView.DataSource(\{ \par
+rowHasChanged: (r1, r2) => r1 !== r2 \par
+\}); \par
+\par
+class App extends Component \{ \par
+state = \{ \par
+\tab dataSource: ds.cloneWithRows([ \par
+\tab "Data Structures", \par
+\tab "STL", \par
+\tab "C++", \par
+\tab "Java", \par
+\tab "Python", \par
+\tab "ReactJS", \par
+\tab "Angular", \par
+\tab ]), \par
+\}; \par
+\par
+render() \{ \par
+\tab return ( \par
+\tab <View style=\{styles.screen\}> \par
+\tab\tab <ListView \par
+\tab\tab dataSource=\{this.state.dataSource\} \par
+\tab\tab renderRow=\{(rowData) => ( \par
+\tab\tab\tab <View style=\{styles.row\}> \par
+\tab\tab\tab <Text style=\{styles.rowText\}>\{rowData\}</Text> \par
+\tab\tab\tab <Icon name="ios-eye" type="ionicon" color="#C2185B" /> \par
+\tab\tab\tab </View> \par
+\tab\tab )\} \par
+\tab\tab /> \par
+\tab </View> \par
+\tab ); \par
+\} \par
+\} \par
+\par
+// Screen styles \par
+const styles = StyleSheet.create(\{ \par
+screen: \{ \par
+\tab marginTop: 30, \par
+\}, \par
+row: \{ \par
+\tab margin: 15, \par
+\tab flexDirection: "row", \par
+\tab justifyContent: "space-between", \par
+\tab alignItems: "center", \par
+\tab paddingHorizontal: 2, \par
+\}, \par
+rowText: \{ \par
+\tab fontSize: 18, \par
+\}, \par
+\}); \par
+\par
+export default App;\par
+\b\f1\fs28  \f0 11.\f1  Create Increment decrement state change by button click? \par
+\f0 Ans.\b0\fs24  \par
+import React from 'react';\par
+import \{ Component \} from 'react';\par
+class Classcompostate extends Component \{\par
+    constructor() \{\par
+        super()\par
+        this.state = \{\par
+            count: 5,\par
+            name: "Kiran"\par
+        \}\par
+    \}\par
+    increment = () => \{\par
+        this.setState(\{ count: this.state.count + 1 \})\par
+        this.setState(\{ name: this.state.name = "Shiv" \})\par
+        console.log("increment", this.state.count);\par
+        console.log(this.state.name);\par
+    \}\par
+    decrement = () => \{\par
+        this.setState(\{ count: this.state.count - 1 \})\par
+        console.log("decrement", this.state.count);\par
+\par
+    \}\par
+    render() \{\par
+        return (\par
+            <>\par
+                <h1>Classcompo state</h1>\par
+                <h2>\{this.state.count\}</h2>\par
+                    <h2>\{this.state.name\}</h2>\par
+                <button onClick=\{this.increment\}>+</button>\par
+                <button onClick=\{this.decrement\}>-</button>\par
+\par
+            </>\par
+        );\par
+    \}\par
+\}\par
+\par
+export default Classcompostate;\b\lang9\par
+}
+ 
