@@ -1,0 +1,359 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\i\f0\fs44\lang9 React - Applying Redux\b0\i0\fs28\par
+
+\pard\sa200\sl276\slmult1\b 1. \f1 What is Redux?\par
+\f0\lang16393 Ans. \b0\fs24\par
+Redux is a JavaScript library that manages and centralizes application state. It's a predictable state container that helps developers write JavaScript apps that behave consistently across environments and are easy to test. \par
+Redux is most commonly used with libraries like React or Angular to build user interfaces. It's particularly well-suited for applications with many different components that need to share data. \par
+Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that needs to be used across the entire application. \par
+Redux was created by Dan Abramov and Andrew Clark around June 2015, inspired by Facebook's Flux and functional programming language Elm. \par
+\b\fs28 2. \f1 What is Redux Thunk used for?\par
+\f0 Ans. \b0\fs24\par
+\fs22\lang9 Redux Thunk is a middleware library that allows Redux to return functions instead of actions. This enables delayed actions, including working with promises. \par
+Redux Thunk is primarily used for handling actions that might not be synchronous. For example, using axios to send a GET request. \par
+Redux Thunk allows you to write action creators that return functions instead of plain objects. These functions can contain any arbitrary logic, sync or async, and can dispatch other actions or access the state. \par
+These functions can have side effects, including making asynchronous API calls, dispatching multiple actions, and accessing the current state. \par
+Motivation. Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState as parameters.\par
+\b\fs28 3. \f1 What is Pure Component? When to use Pure Component over\f0\lang16393  \f1\lang9 Component?\par
+\f0\lang16393 Ans. \b0\fs24\par
+\lang9 PureComponent: Implements a shallow comparison in shouldComponentUpdate and only re-renders when there are changes in its state or props.\par
+A PureComponent in React is a class-based component that extends the React.PureComponent class. Like regular Components, PureComponents have access to the component lifecycle methods and can manage their state. However, PureComponents implement the shouldComponentUpdate lifecycle method, which performs a shallow comparison of the component's current props and state with the next props and state. If there are no changes, the PureComponent skips the re-render, optimizing performance by reducing unnecessary updates.\par
+Using PureComponent can help optimize the performance of your React application by reducing unnecessary renders. Consider using PureComponent in the following scenarios:\par
+\b\f1\fs28\bullet  \b0\f0\fs24 When a component\rquote s output solely depends on its state and props, and there are no side effects, such as network requests or interactions with the DOM.\par
+\b\f1\fs28\bullet  \b0\f0\fs24 When a component receives complex data structures as props, and you can ensure that changes only occur at the top level, as PureComponent performs a shallow comparison.\par
+Keep in mind that PureComponent may not be suitable for components with deep data structures or components that depend on functions or objects created during render, as PureComponent\rquote s shallow comparison might not detect changes in these cases.\par
+\b\fs28 4. What is the second argument that can optionally be passed to setState and what is its purpose?\par
+Ans. \b0\fs24\par
+The second argument that can optionally be passed to setState is a callback function. This function is called after the setState is completed and the components get re-rendered. \par
+The purpose of the second argument to setState is to allow actions to be performed immediately after a state change. This ensures that the data rendered will use the newest state. \par
+The callback function will log the updated value on the console when the asynchronous action is completed. \par
+In most cases, componentDidUpdate should be used instead to apply such logic. \par
+\fs28 The second parameter to setState() is an optional callback function that will be executed once setState is completed and the component is re-rendered. Generally we recommend using componentDidUpdate() for such logic instead.\par
+\b 5. \f1 Create a Table and Search data from table using React Js ?\par
+\f0\lang16393 Ans. \b0\fs24\par
+\b 1. Index.js Page\par
+import React from 'react';\par
+import ReactDOM from 'react-dom/client';\par
+import './index.css';\par
+import App from './App';\par
+import reportWebVitals from './reportWebVitals';\par
+\par
+const root = ReactDOM.createRoot(document.getElementById('root'));\par
+root.render(\par
+  <React.StrictMode>\par
+    <App />\par
+  </React.StrictMode>\par
+);\par
+\par
+// If you want to start measuring performance in your app, pass a function\par
+// to log results (for example: reportWebVitals(console.log))\par
+// or send to an analytics endpoint. Learn more: {{\field{\*\fldinst{HYPERLINK https://bit.ly/CRA-vitals }}{\fldrslt{https://bit.ly/CRA-vitals\ul0\cf0}}}}\f0\fs24\par
+reportWebVitals();\par
+2. App.js Page\par
+import React, \{ useState \} from 'react';\par
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';\par
+import "@fortawesome/fontawesome-free/css/all.min.css";\par
+import \{ MDBTable, MDBTableHead, MDBTableBody \} from 'mdb-react-ui-kit';\par
+\par
+const data = [\par
+  \{ id: 1, name: 'Sardar singh', age: 25 \},\par
+  \{ id: 2, name: 'Jatin kumar', age: 30 \},\par
+  \{ id: 3, name: 'Suresh kumar', age: 26 \},\par
+  \{ id: 4, name: 'Krupal kumar', age: 24 \},\par
+  \{ id: 5, name: 'Kailash kumar', age: 21 \},\par
+  // Add more data as needed\par
+];\par
+\par
+const Table = (\{ searchData \}) => \{\par
+  return (\par
+    <MDBTable>\par
+      <MDBTableHead>\par
+        <tr>\par
+          <th>ID</th>\par
+          <th>Name</th>\par
+          <th>Age</th>\par
+        </tr>\par
+      </MDBTableHead>\par
+      <MDBTableBody>\par
+        \{searchData.map((item) => (\par
+          <tr key=\{item.id\}>\par
+            <td>\{item.id\}</td>\par
+            <td>\{item.name\}</td>\par
+            <td>\{item.age\}</td>\par
+          </tr>\par
+        ))\}\par
+      </MDBTableBody>\par
+    </MDBTable>\par
+  );\par
+\};\par
+\par
+const Search = (\{ handleSearch \}) => \{\par
+  return (\par
+    <input\par
+      type="text"\par
+      placeholder="Search by name"\par
+      onChange=\{(e) => handleSearch(e.target.value)\}\par
+    />\par
+  );\par
+\};\par
+\par
+const App = () => \{\par
+  const [searchTerm, setSearchTerm] = useState('');\par
+  const [searchData, setSearchData] = useState(data);\par
+\par
+  const handleSearch = (term) => \{\par
+    setSearchTerm(term);\par
+\par
+    const filteredData = data.filter((item) =>\par
+      item.name.toLowerCase().includes(term.toLowerCase())\par
+    );\par
+\par
+    setSearchData(filteredData);\par
+  \};\par
+\par
+  return (\par
+    <div>\par
+      <h1>React Table Search</h1>\par
+      <Search handleSearch=\{handleSearch\} />\par
+      <Table searchData=\{searchData\} />\par
+    </div>\par
+  );\par
+\};\par
+\par
+export default App;\par
+\fs28\lang9 6. \f1 Create Login registration with CRUD Application using API (Redux)\par
+\f0\lang16393 Ans. \par
+1. Index.html Page\par
+<!DOCTYPE html>\par
+<html lang="en">\par
+\par
+<head>\par
+  <meta charset="utf-8" />\par
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />\par
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\par
+  <meta name="theme-color" content="#000000" />\par
+  <meta name="description" content="Web site created using create-react-app" />\par
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />\par
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"\par
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="\par
+    crossorigin="anonymous" referrerpolicy="no-referrer" />\par
+  <!--\par
+      manifest.json provides metadata used when your web app is installed on a\par
+      user's mobile device or desktop. See {{\field{\*\fldinst{HYPERLINK https://developers.google.com/web/fundamentals/web-app-manifest/ }}{\fldrslt{https://developers.google.com/web/fundamentals/web-app-manifest/\ul0\cf0}}}}\f0\fs28\par
+    -->\par
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />\par
+  <!--\par
+      Notice the use of %PUBLIC_URL% in the tags above.\par
+      It will be replaced with the URL of the `public` folder during the build.\par
+      Only files inside the `public` folder can be referenced from the HTML.\par
+\par
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will\par
+      work correctly both with client-side routing and a non-root public URL.\par
+      Learn how to configure a non-root public URL by running `npm run build`.\par
+    -->\par
+  <title>React App</title>\par
+</head>\par
+\par
+<body>\par
+  <noscript>You need to enable JavaScript to run this app.</noscript>\par
+  <div id="root"></div>\par
+  <!--\par
+      This HTML file is a template.\par
+      If you open it directly in the browser, you will see an empty page.\par
+\par
+      You can add webfonts, meta tags, or analytics to this file.\par
+      The build step will place the bundled scripts into the <body> tag.\par
+\par
+      To begin the development, run `npm start` or `yarn start`.\par
+      To create a production bundle, use `npm run build` or `yarn build`.\par
+    -->\par
+</body>\par
+\par
+</html>\par
+2. Action/Index.js Page\par
+export const addtodo = (data) => \{\par
+    return \{\par
+        type: "ADD_TODO",\par
+        payload: \{\par
+            id: new Date().getTime().toString(),\par
+            data:data\par
+        \}\par
+\par
+    \}\par
+\}\par
+export const deletetodo = (id) => \{\par
+    return \{\par
+        type: "DELETE_TODO",\par
+        id\par
+    \}\par
+\}\par
+export const removetodo = () => \{\par
+    return \{\par
+        type: "REMOVE_TODO"\par
+\par
+    \}\par
+\}\par
+3. Component/Todo.js Page\par
+import React, \{ useState \} from 'react';\par
+import \{ useSelector, useDispatch \} from 'react-redux';\par
+import \{ addtodo, deletetodo, removetodo \} from '../Action/Index';\par
+\par
+const App = () => \{\par
+    const [data, setData] = useState('')\par
+    const list = useSelector((state) => state.todoreducer.list);\par
+    const dispatch = useDispatch()\par
+    return (\par
+        <>\par
+            <h1>Welcome My Redux</h1>\par
+            <div className='main'>\par
+                <div className='child'>\par
+                    <h2>Add Your List</h2>\par
+                    <div className='add-items'>\par
+                        <input type='text' placeholder='Write Here'\par
+                            value=\{data\}\par
+                            onChange=\{(e) => setData(e.target.value)\} />\par
+                        <button><i class="fa-regular fa-plus"\par
+                            onClick=\{() => dispatch(addtodo(data), setData(''))\}></i></button>\par
+                    </div>\par
+                    <div className='showitems'>\par
+                        \{\par
+                            list.map((elem) => \{\par
+                                return (\par
+                                    <div className='eachitems' key=\{elem.id\}>\par
+                                        <h3>\{elem.data\}</h3>\par
+                                        <div className='todo-btn'>\par
+                                            <button><i class="far fa-trash-alt add-btn" title="Delete Item"\par
+                                                onClick=\{() => dispatch(deletetodo(elem.id))\}></i></button>\par
+                                        </div>\par
+                                    </div>\par
+                                )\par
+                            \})\par
+                        \}\par
+                    </div>\par
+                    <div className='show-items'>\par
+                        <button className='btn effect04' data-sm-link-text="Remove All"\par
+                            onClick=\{() => dispatch(removetodo())\}>Clear List</button>\par
+                    </div>\par
+                </div>\par
+            </div>\par
+        </>\par
+    );\par
+\}\par
+\par
+export default App;\par
+4. Reducer/Todoreducer.js Page\par
+const initialdata = \{\par
+    list: []\par
+\}\par
+\par
+const todoreducer = (state = initialdata, action) => \{\par
+    switch (action.type) \{\par
+        case "ADD_TODO":\par
+            const \{ id, data \} = action.payload;\par
+            return \{\par
+                ...state,\par
+                list: [\par
+                    ...state.list,\par
+                    \{\par
+                        id: id,\par
+                        data: data\par
+                    \}\par
+                ]\par
+            \}\par
+\par
+        case "DELETE_TODO":\par
+            const newList = state.list.filter((elem) => elem.id !== action.id)\par
+            return \{\par
+                ...state,\par
+                list: newList\par
+            \}\par
+        case "REMOVE_TODO": return \{\par
+            ...state,\par
+            list: []\par
+        \}\par
+        default: return state;\par
+    \}\par
+\}\par
+export default todoreducer;\par
+5. Reducer/Index.js Page\par
+import todoreducer from "./Todoreducer";\par
+\par
+import \{ combineReducers \} from "redux";\par
+\par
+const rootReducer = combineReducers(\{\par
+    todoreducer\par
+\})\par
+export default rootReducer;\par
+6. index.js Page\par
+import React from 'react';\par
+import ReactDOM from 'react-dom/client';\par
+import './index.css';\par
+import App from './App';\par
+import reportWebVitals from './reportWebVitals';\par
+import \{ Provider \} from 'react-redux';\par
+import store from './Store';\par
+\par
+const root = ReactDOM.createRoot(document.getElementById('root'));\par
+root.render(\par
+  <React.StrictMode>\par
+    <Provider store=\{store\}>\par
+      <App />\par
+    </Provider>\par
+  </React.StrictMode>\par
+);\par
+\par
+// If you want to start measuring performance in your app, pass a function\par
+// to log results (for example: reportWebVitals(console.log))\par
+// or send to an analytics endpoint. Learn more: {{\field{\*\fldinst{HYPERLINK https://bit.ly/CRA-vitals }}{\fldrslt{https://bit.ly/CRA-vitals\ul0\cf0}}}}\f0\fs28\par
+reportWebVitals();\par
+7.index.css Page\par
+body \{\par
+  margin: 0;\par
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\par
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\par
+    sans-serif;\par
+  -webkit-font-smoothing: antialiased;\par
+  -moz-osx-font-smoothing: grayscale;\par
+\}\par
+\par
+h1 \{\par
+  text-align: center;\par
+\}\par
+\par
+.main \{\par
+  text-align: center;\par
+\}\par
+\par
+.add-items input,\par
+button \{\par
+  padding: 10px;\par
+  margin-top: 10px;\par
+\}\par
+\par
+.show-items button:hover \{\par
+  border: 2px solid blue;\par
+  background-color: yellow;\par
+\}\par
+\par
+.add-items button:hover \{\par
+  border: 2px solid blue;\par
+  background-color: yellow;\par
+\}\par
+\par
+.todo-btn button \{\par
+  border: 2px solid rgb(243, 12, 19);\par
+  background-color: khaki;\par
+\}\par
+8. Store.js Page\par
+import \{ legacy_createStore as createStore\} from "redux";\par
+\par
+import rootReducer from "./Reducer/Index";\par
+\par
+let store = createStore(rootReducer);\par
+\par
+export default store;\fs24\par
+\b0\fs28\lang9\par
+}
+ 
